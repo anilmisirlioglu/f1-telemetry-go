@@ -66,19 +66,23 @@
 ## Network Game
 
 **0** = offline
+
 **1** = online
 
 ## UDP Settings
 
 **0** = restricted
+
 **1** = public
 
 ## Current Lap Invalid
 
 **0** = valid
+
 **1** = invalid
 
 ## AI Controlled
 
 **0** = Human
+
 **1** = AI

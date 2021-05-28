@@ -10,6 +10,7 @@
 ## DRS
 
 **0** = off 
+
 **1** = on
 
 ## ERS Deploy Mode
@@ -24,6 +25,7 @@
 ## SLI Pro Support
 
 **0** = inactive
+
 **1** = active
 
 ## MFD Panel Index
@@ -45,19 +47,23 @@ Single player, race;
 ## Pit Limiter Status
 
 **0** = Off
+
 **1** = On
 
 ## Traction Control
 
 **0** = Off
+
 **2** = High
 
 ## Anti Lock Brakes
 
 **0** = Off
+
 **1** = On
 
 ## DRS Fault
 
 **0** = OK
+
 **1** = fault

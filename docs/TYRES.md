@@ -1,8 +1,11 @@
 ## Wheel Order Array
 
 **0** – Rear Left (RL)   
-**1** – Rear Right (RR)   
-**2** – Front Left (FL)   
+
+**1** – Rear Right (RR)
+
+**2** – Front Left (FL)
+
 **3** – Front Right (FR)
 
 ## Actual Tyre Compounds
