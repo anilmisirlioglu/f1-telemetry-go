@@ -17,7 +17,7 @@
 | 12 | Williams 1992 |
 | 13 | Ferrari 1995 |
 | 14 | Williams 1996 |
-| 15 | McLaren 1988 |
+| 15 | McLaren 1998 |
 | 16 | Ferrari 2002 |
 | 17 | Ferrari 2004 |
 | 18 | Renault 2006 |
@@ -59,6 +59,9 @@
 | 54 | Benetton 1995 |
 | 55 | Ferrari 2000 |
 | 56 | Jordan 1991 |
+| 63 | Ferrari 1990 |
+| 64 | McLaren 2010 |
+| 65 | Ferrari 2010 |
 | 255 | My Team |
 
 ## Driver IDs

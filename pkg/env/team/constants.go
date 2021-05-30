@@ -1,0 +1,65 @@
+package team
+
+// Team IDs
+const (
+	Mercedes                uint8 = 0
+	Ferrari                 uint8 = 1
+	RedBulRacing            uint8 = 2
+	Williams                uint8 = 3
+	RacingPoint             uint8 = 4
+	Renault                 uint8 = 5
+	AlphaTauri              uint8 = 6
+	Haas                    uint8 = 7
+	McLaren                 uint8 = 8
+	AlfaRomeo               uint8 = 9
+	McLaren1988             uint8 = 10
+	McLaren1991             uint8 = 11
+	Williams1992            uint8 = 12
+	Ferrari1995             uint8 = 13
+	Williams1996            uint8 = 14
+	McLaren1998             uint8 = 15
+	Ferrari2002             uint8 = 16
+	Ferrari2004             uint8 = 17
+	Renault2006             uint8 = 18
+	Ferrari2007             uint8 = 19
+	McLaren2008             uint8 = 20
+	RedBull2010             uint8 = 21
+	Ferrari1976             uint8 = 22
+	ARTGrandPrix            uint8 = 23
+	CamposVexatecRacing     uint8 = 24
+	Carlin                  uint8 = 25
+	CharouzRacingSystem     uint8 = 26
+	DAMS                    uint8 = 27
+	RussianTime             uint8 = 28
+	MPMotorsport            uint8 = 29
+	Pertamina               uint8 = 30
+	McLaren1990             uint8 = 31
+	Trident                 uint8 = 32
+	BWTArden                uint8 = 33
+	McLaren1976             uint8 = 34
+	Lotus1972               uint8 = 35
+	Ferrari1979             uint8 = 36
+	McLaren1982             uint8 = 37
+	Williams2003            uint8 = 38
+	Brawn2009               uint8 = 39
+	Lotus1978               uint8 = 40
+	F1GenericCar            uint8 = 41
+	ArtGP2019               uint8 = 42
+	Campos2019              uint8 = 43
+	Carlin2019              uint8 = 44
+	SauberJuniorCharouz2019 uint8 = 45
+	Dams2019                uint8 = 46
+	UniVirtuosi2019         uint8 = 47
+	MPMotorsport2019        uint8 = 48
+	Prema2019               uint8 = 49
+	Trident2019             uint8 = 50
+	Arden2019               uint8 = 51
+	Benetton1994            uint8 = 53
+	Benetton1995            uint8 = 54
+	Ferrari2000             uint8 = 55
+	Jordan1991              uint8 = 56
+	Ferrari1990             uint  = 63
+	McLaren2010             uint  = 64
+	Ferrari2010             uint  = 64
+	MyTeam                  uint8 = 255
+)

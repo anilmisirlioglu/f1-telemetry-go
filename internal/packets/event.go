@@ -24,8 +24,8 @@ type RaceWinner struct {
 }
 
 type Penalty struct {
-	PenaltyType      uint8 // Penalty type – see Appendices
-	InfringementType uint8 // Infringement type – see Appendices
+	PenaltyType      uint8 // Penalty type – see docs/TYPES.md#penalty-types
+	InfringementType uint8 // Infringement type – see docs/TYPES.md#infringement-types
 	VehicleIDx       uint8 // Vehicle index of the car the penalty is applied to
 	OtherVehicleIdx  uint8 // Vehicle index of the other car involved
 	Time             uint8 // Time gained, or time spent doing action in seconds

@@ -22,7 +22,7 @@ type CarTelemetryData struct {
 	TyresInnerTemperature   [4]uint8   // Tyres inner temperature (celsius)
 	EngineTemperature       uint16     // Engine temperature (celsius)
 	TyresPressure           [4]float32 // Tyres pressure (PSI)
-	SurfaceType             [4]uint8   // Driving surface, see appendices
+	SurfaceType             [4]uint8   // Driving surface, see docs/TYPES.md#surface-types
 }
 
 type PacketCarTelemetryData struct {

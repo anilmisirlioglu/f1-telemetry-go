@@ -1,5 +1,12 @@
 package packets
 
+// This packet details the players currently in a multiplayer lobby.
+// It details each player’s selected car, any AI involved in the game and also the ready status of each of the participants.
+
+// Frequency: Two every second when in the lobby
+// Size: 1169 bytes
+// Version: 1
+
 type LobbyInfoData struct {
 	AIControlled uint8    // Whether the vehicle is AI (1) or Human (0) controlled
 	TeamID       uint8    // Team ID - see docs/IDS.md#team-ids (255 if no team currently selected)
