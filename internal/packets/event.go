@@ -53,3 +53,12 @@ type PacketEventData struct {
 	EventDetails    EventDataDetails // Event details - should be interpreted differently
 	// for each type
 }
+
+func (p *PacketEventData) EventCodeString() string {
+	b := make([]byte, len(p.EventStringCode))
+	for i, v := range p.EventStringCode {
+		b[i] = v
+	}
+
+	return string(b)
+}
