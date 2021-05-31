@@ -5,7 +5,6 @@ import (
 	"fmt"
 	"net"
 
-	"github.com/anilmisirlioglu/f1-telemetry/internal"
 	"github.com/anilmisirlioglu/f1-telemetry/internal/env"
 	"github.com/anilmisirlioglu/f1-telemetry/internal/packets"
 )
@@ -32,7 +31,7 @@ func (s *Server) ReadSocket() (*packets.PacketHeader, interface{}, error) {
 	}
 
 	header := new(packets.PacketHeader)
-	if err = internal.ReadPacket(buf, header); err != nil {
+	if err = ReadPacket(buf, header); err != nil {
 		return nil, nil, err
 	}
 
@@ -41,7 +40,7 @@ func (s *Server) ReadSocket() (*packets.PacketHeader, interface{}, error) {
 		return nil, nil, errors.New(fmt.Sprintf("invalid packet: %d\n", header.PacketID))
 	}
 
-	if err = internal.ReadPacket(buf, pack); err != nil {
+	if err = ReadPacket(buf, pack); err != nil {
 		return nil, nil, errors.New(fmt.Sprintf("%d: %s\n", header.PacketID, err))
 	}
 
