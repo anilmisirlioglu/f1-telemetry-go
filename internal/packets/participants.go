@@ -22,3 +22,7 @@ type PacketParticipantsData struct {
 	NumActiveCars uint8               // Number of active cars in the data – should match number of
 	Participants  [22]ParticipantData // cars on HUD
 }
+
+func (p *ParticipantData) NameToString() string {
+	return string(p.Name[:])
+}

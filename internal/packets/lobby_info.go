@@ -21,3 +21,7 @@ type PacketLobbyInfoData struct {
 	NumPlayers   uint8 // Number of players in the lobby data
 	LobbyPlayers [22]LobbyInfoData
 }
+
+func (p *LobbyInfoData) NameToString() string {
+	return string(p.Name[:])
+}
