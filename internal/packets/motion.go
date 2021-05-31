@@ -1,6 +1,6 @@
 package packets
 
-import "github.com/anilmisirlioglu/f1-telemetry/internal/math"
+import "github.com/anilmisirlioglu/f1-telemetry-go/internal/math"
 
 // The motion packet gives physics data for all the cars being driven.
 // There is additional data for the car being driven with the goal of being able to drive a motion platform setup.

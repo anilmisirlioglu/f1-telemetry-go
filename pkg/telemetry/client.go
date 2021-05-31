@@ -4,10 +4,10 @@ import (
 	"log"
 	"net"
 
-	"github.com/anilmisirlioglu/f1-telemetry/internal/env"
-	"github.com/anilmisirlioglu/f1-telemetry/internal/event"
-	"github.com/anilmisirlioglu/f1-telemetry/internal/packets"
-	"github.com/anilmisirlioglu/f1-telemetry/internal/udp"
+	"github.com/anilmisirlioglu/f1-telemetry-go/internal/env"
+	"github.com/anilmisirlioglu/f1-telemetry-go/internal/event"
+	"github.com/anilmisirlioglu/f1-telemetry-go/internal/packets"
+	"github.com/anilmisirlioglu/f1-telemetry-go/internal/udp"
 )
 
 type Client struct {

@@ -7,9 +7,9 @@ import (
 	"os/signal"
 	"time"
 
-	"github.com/anilmisirlioglu/f1-telemetry/internal/packets"
-	"github.com/anilmisirlioglu/f1-telemetry/pkg/env/driver"
-	"github.com/anilmisirlioglu/f1-telemetry/pkg/telemetry"
+	"github.com/anilmisirlioglu/f1-telemetry-go/internal/packets"
+	"github.com/anilmisirlioglu/f1-telemetry-go/pkg/env/driver"
+	"github.com/anilmisirlioglu/f1-telemetry-go/pkg/telemetry"
 )
 
 func main() {
