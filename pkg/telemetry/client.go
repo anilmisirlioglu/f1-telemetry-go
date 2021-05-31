@@ -1,6 +1,7 @@
 package telemetry
 
 import (
+	"log"
 	"net"
 
 	"github.com/anilmisirlioglu/f1-telemetry/internal"
@@ -10,7 +11,7 @@ import (
 )
 
 type Client struct {
-	conn       *net.UDPConn
+	server     *internal.UDPServer
 	dispatcher *event.Dispatcher
 }
 
@@ -29,15 +30,20 @@ func NewClientByCustomPort(port *int) (*Client, error) {
 	}
 
 	client := &Client{
-		conn:       conn,
-		dispatcher: event.NewEventDispatcher(),
+		server:     conn,
+		dispatcher: event.NewDispatcher(),
 	}
 	return client, nil
 }
 
 func (c *Client) Run() {
 	for {
-		internal.ListenUDPSocket(c.dispatcher, c.conn)
+		h, p, err := c.server.ListenUDPSocket()
+		if err != nil {
+			log.Println(err)
+		}
+
+		c.dispatcher.Dispatch(h.PacketID, p)
 	}
 }
 

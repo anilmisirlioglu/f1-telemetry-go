@@ -13,7 +13,7 @@ type Dispatcher struct {
 	events Store
 }
 
-func NewEventDispatcher() *Dispatcher {
+func NewDispatcher() *Dispatcher {
 	return &Dispatcher{
 		events: make(Store),
 	}

@@ -1,49 +1,50 @@
 package internal
 
 import (
-	"log"
+	"errors"
+	"fmt"
 	"net"
 
 	"github.com/anilmisirlioglu/f1-telemetry/internal/env"
-	"github.com/anilmisirlioglu/f1-telemetry/internal/event"
 	"github.com/anilmisirlioglu/f1-telemetry/internal/packets"
 )
 
-func ServeUDP(addr *net.UDPAddr) (*net.UDPConn, error) {
+type UDPServer struct {
+	conn *net.UDPConn
+}
+
+func ServeUDP(addr *net.UDPAddr) (*UDPServer, error) {
 	conn, err := net.ListenUDP("udp", addr)
 	if err != nil {
 		return nil, err
 	}
 
-	return conn, nil
+	s := &UDPServer{conn: conn}
+	return s, nil
 }
 
-func ListenUDPSocket(dispatcher *event.Dispatcher, conn *net.UDPConn) {
+func (s *UDPServer) ListenUDPSocket() (*packets.PacketHeader, interface{}, error) {
 	buf := make([]byte, 1024*5)
-	_, _, err := conn.ReadFromUDP(buf)
+	_, _, err := s.conn.ReadFromUDP(buf)
 	if err != nil {
-		log.Printf("read error: %s\n", err)
-		return
+		return nil, nil, errors.New(fmt.Sprintf("read error: %s\n", err))
 	}
 
 	header := new(packets.PacketHeader)
-	if err = ReadPacket(&buf, header); err != nil {
-		log.Println(err)
-		return
+	if err = ReadPacket(buf, header); err != nil {
+		return nil, nil, err
 	}
 
 	pack := newPacketById(header.PacketID)
 	if pack == nil {
-		log.Printf("invalid packet: %d\n", header.PacketID)
-		return
+		return nil, nil, errors.New(fmt.Sprintf("invalid packet: %d\n", header.PacketID))
 	}
 
-	if err = ReadPacket(&buf, pack); err != nil {
-		log.Printf("%d: %s\n", header.PacketID, err)
-		return
+	if err = ReadPacket(buf, pack); err != nil {
+		return nil, nil, errors.New(fmt.Sprintf("%d: %s\n", header.PacketID, err))
 	}
 
-	dispatcher.Dispatch(header.PacketID, pack)
+	return header, pack, nil
 }
 
 func newPacketById(packetId uint8) interface{} {
