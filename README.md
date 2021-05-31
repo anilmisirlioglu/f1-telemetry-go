@@ -27,3 +27,7 @@ func main() {
 	client.Run()
 }
 ```
+
+## Docs
+
+If you need more information on the F1 UDP specifications, see the [docs](/docs).
