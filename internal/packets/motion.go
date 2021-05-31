@@ -1,5 +1,7 @@
 package packets
 
+import "github.com/anilmisirlioglu/f1-telemetry/internal/math"
+
 // The motion packet gives physics data for all the cars being driven.
 // There is additional data for the car being driven with the goal of being able to drive a motion platform setup.
 
@@ -47,4 +49,24 @@ type PacketMotionData struct {
 	AngularAccelerationY   float32    // Angular velocity y-component
 	AngularAccelerationZ   float32    // Angular velocity z-component
 	FrontWheelsAngle       float32    // Current front wheels angle in radians
+}
+
+func (p *PacketMotionData) LocalVelocityAsVector3() *math.Vector3 {
+	return math.NewVector3(p.LocalVelocityX, p.LocalVelocityY, p.LocalVelocityZ)
+}
+
+func (p *PacketMotionData) AngularVelocityAsVector3() *math.Vector3 {
+	return math.NewVector3(p.AngularVelocityX, p.AngularVelocityY, p.AngularVelocityZ)
+}
+
+func (p *PacketMotionData) AngularAccelerationAsVector3() *math.Vector3 {
+	return math.NewVector3(p.AngularAccelerationX, p.AngularAccelerationY, p.AngularAccelerationZ)
+}
+
+func (p *CarMotionData) WorldPositionAsVector3() *math.Vector3 {
+	return math.NewVector3(p.WorldPositionX, p.WorldPositionY, p.WorldPositionZ)
+}
+
+func (p *CarMotionData) WorldVelocityAsVector3() *math.Vector3 {
+	return math.NewVector3(p.WorldVelocityX, p.WorldVelocityY, p.WorldVelocityZ)
 }
