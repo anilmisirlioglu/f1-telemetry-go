@@ -4,14 +4,15 @@ import (
 	"log"
 	"net"
 
-	"github.com/anilmisirlioglu/f1-telemetry/internal"
 	"github.com/anilmisirlioglu/f1-telemetry/internal/env"
 	"github.com/anilmisirlioglu/f1-telemetry/internal/event"
 	"github.com/anilmisirlioglu/f1-telemetry/internal/packets"
+	"github.com/anilmisirlioglu/f1-telemetry/internal/udp"
 )
 
 type Client struct {
-	server     *internal.UDPServer
+	server     *udp.Server
+	Stats      *udp.Stats
 	dispatcher *event.Dispatcher
 }
 
@@ -21,7 +22,7 @@ func NewClient() (*Client, error) {
 }
 
 func NewClientByCustomPort(port *int) (*Client, error) {
-	conn, err := internal.ServeUDP(&net.UDPAddr{
+	serv, err := udp.ServeUDP(&net.UDPAddr{
 		IP:   net.ParseIP("127.0.0.1"),
 		Port: *port,
 	})
@@ -30,7 +31,8 @@ func NewClientByCustomPort(port *int) (*Client, error) {
 	}
 
 	client := &Client{
-		server:     conn,
+		Stats:      udp.NewStats(),
+		server:     serv,
 		dispatcher: event.NewDispatcher(),
 	}
 	return client, nil
@@ -38,11 +40,13 @@ func NewClientByCustomPort(port *int) (*Client, error) {
 
 func (c *Client) Run() {
 	for {
-		h, p, err := c.server.ListenUDPSocket()
+		h, p, err := c.server.ReadSocket()
 		if err != nil {
+			c.Stats.IncErr()
 			log.Println(err)
 		}
 
+		c.Stats.IncRecv()
 		c.dispatcher.Dispatch(h.PacketID, p)
 	}
 }
