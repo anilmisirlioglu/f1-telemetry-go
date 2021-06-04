@@ -5,8 +5,8 @@ import (
 	"fmt"
 	"net"
 
-	"github.com/anilmisirlioglu/f1-telemetry-go/internal/env"
-	"github.com/anilmisirlioglu/f1-telemetry-go/internal/packets"
+	"github.com/anilmisirlioglu/f1-telemetry-go/pkg/env"
+	"github.com/anilmisirlioglu/f1-telemetry-go/pkg/packets"
 )
 
 type Server struct {
