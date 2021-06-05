@@ -15,16 +15,16 @@ go get -u github.com/anilmisirlioglu/f1-telemetry-go
 ## Quick Start
 ```go
 func main() {
-	client, err := telemetry.NewClient()
-	if err != nil {
-		log.Fatal(err)
-	}
+  client, err := telemetry.NewClient()
+  if err != nil {
+	log.Fatal(err)
+  }
 	
-    client.OnEventPacket(func(packet *packets.PacketEventData) {
-        fmt.Printf("Code: %s\n", packet.EventCodeString())
-    })
+  client.OnEventPacket(func(packet *packets.PacketEventData) {
+  	fmt.Printf("Code: %s\n", packet.EventCodeString())
+  })
 	
-	client.Run()
+  client.Run()
 }
 ```
 
