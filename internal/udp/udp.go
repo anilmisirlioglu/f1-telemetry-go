@@ -4,8 +4,10 @@ import (
 	"errors"
 	"fmt"
 	"net"
+	"unsafe"
 
 	"github.com/anilmisirlioglu/f1-telemetry-go/pkg/env"
+	"github.com/anilmisirlioglu/f1-telemetry-go/pkg/env/event"
 	"github.com/anilmisirlioglu/f1-telemetry-go/pkg/packets"
 )
 
@@ -27,7 +29,7 @@ func (s *Server) ReadSocket() (*packets.PacketHeader, interface{}, error) {
 	buf := make([]byte, 1024*5)
 	_, _, err := s.conn.ReadFromUDP(buf)
 	if err != nil {
-		return nil, nil, errors.New(fmt.Sprintf("read error: %s\n", err))
+		return nil, nil, errors.New(fmt.Sprintf("read error: %s", err))
 	}
 
 	header := new(packets.PacketHeader)
@@ -37,11 +39,27 @@ func (s *Server) ReadSocket() (*packets.PacketHeader, interface{}, error) {
 
 	pack := newPacketById(header.PacketID)
 	if pack == nil {
-		return nil, nil, errors.New(fmt.Sprintf("invalid packet: %d\n", header.PacketID))
+		return nil, nil, errors.New(fmt.Sprintf("invalid packet: %d", header.PacketID))
 	}
 
 	if err = ReadPacket(buf, pack); err != nil {
-		return nil, nil, errors.New(fmt.Sprintf("%d: %s\n", header.PacketID, err))
+		return nil, nil, errors.New(fmt.Sprintf("%d: %s", header.PacketID, err))
+	}
+
+	if header.PacketID == env.PacketEvent {
+		details := resolveEventDetails(pack.(*packets.PrePacketEventData))
+		pre := pack.(*packets.PrePacketEventData)
+		if details != nil {
+			err = ReadPacket(pre.EventDetails[:unsafe.Sizeof(details)], details)
+			if err != nil {
+				return nil, nil, errors.New(fmt.Sprintf("event packet details read error: %s", err))
+			}
+		}
+		pack = &packets.PacketEventData{
+			Header:          pre.Header,
+			EventStringCode: pre.EventStringCode,
+			EventDetails:    details,
+		}
 	}
 
 	return header, pack, nil
@@ -56,7 +74,7 @@ func newPacketById(packetId uint8) interface{} {
 	case env.PacketLap:
 		return new(packets.PacketLapData)
 	case env.PacketEvent:
-		return new(packets.PacketEventData)
+		return new(packets.PrePacketEventData)
 	case env.PacketParticipants:
 		return new(packets.PacketParticipantsData)
 	case env.PacketCarSetup:
@@ -69,6 +87,25 @@ func newPacketById(packetId uint8) interface{} {
 		return new(packets.PacketFinalClassificationData)
 	case env.PacketLobbyInfo:
 		return new(packets.PacketLobbyInfoData)
+	}
+
+	return nil
+}
+
+func resolveEventDetails(pre *packets.PrePacketEventData) interface{} {
+	switch string(pre.EventStringCode[:]) {
+	case event.FastestLap:
+		return new(packets.FastestLap)
+	case event.Retirement:
+		return new(packets.Retirement)
+	case event.TeamMateInPit:
+		return new(packets.TeamMateInPits)
+	case event.RaceWinner:
+		return new(packets.RaceWinner)
+	case event.PenaltyIssued:
+		return new(packets.Penalty)
+	case event.SpeedTrapTriggered:
+		return new(packets.SpeedTrap)
 	}
 
 	return nil

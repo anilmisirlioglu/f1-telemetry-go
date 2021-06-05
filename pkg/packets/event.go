@@ -26,7 +26,7 @@ type RaceWinner struct {
 type Penalty struct {
 	PenaltyType      uint8 // Penalty type – see docs/TYPES.md#penalty-types
 	InfringementType uint8 // Infringement type – see docs/TYPES.md#infringement-types
-	VehicleIDx       uint8 // Vehicle index of the car the penalty is applied to
+	VehicleIdx       uint8 // Vehicle index of the car the penalty is applied to
 	OtherVehicleIdx  uint8 // Vehicle index of the other car involved
 	Time             uint8 // Time gained, or time spent doing action in seconds
 	LapNum           uint8 // Lap the penalty occurred on
@@ -38,19 +38,17 @@ type SpeedTrap struct {
 	Speed      float32 // Top speed achieved in kilometres per hour
 }
 
-type EventDataDetails struct {
-	FastestLap     FastestLap
-	Retirement     Retirement
-	TeamMateInPits TeamMateInPits
-	RaceWinner     RaceWinner
-	Penalty        Penalty
-	SpeedTrap      SpeedTrap
+// PrePacketEventData DO NOT USE
+type PrePacketEventData struct {
+	Header          PacketHeader
+	EventStringCode [4]uint8
+	EventDetails    [7 * 8]byte
 }
 
 type PacketEventData struct {
 	Header          PacketHeader
-	EventStringCode [4]uint8         // Event string code, see below
-	EventDetails    EventDataDetails // Event details - should be interpreted differently
+	EventStringCode [4]uint8    // Event string code, see below
+	EventDetails    interface{} // Event details - should be interpreted differently
 	// for each type
 }
 
