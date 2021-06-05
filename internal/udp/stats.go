@@ -31,11 +31,11 @@ func (s *Stats) ErrCount() int {
 	return s.err
 }
 
-// PPR = Packet Per Second
-func (s *Stats) PPR() int {
+// PPS = Packet Per Second
+func (s *Stats) PPS() int {
 	s.Lock()
 	defer s.Unlock()
-	if s.eqPPRTime() {
+	if s.eqPPSTime() {
 		s.t = time.Now()
 		s.ppr = 0
 	}
@@ -48,7 +48,7 @@ func (s *Stats) IncRecv() {
 	s.recv += 1
 	s.Unlock()
 
-	s.resolvePPR()
+	s.resolvePPS()
 }
 
 func (s *Stats) IncErr() {
@@ -57,10 +57,10 @@ func (s *Stats) IncErr() {
 	s.Unlock()
 }
 
-func (s *Stats) resolvePPR() {
+func (s *Stats) resolvePPS() {
 	s.Lock()
 	defer s.Unlock()
-	if s.eqPPRTime() {
+	if s.eqPPSTime() {
 		s.t = time.Now()
 		s.ppr = 0
 	} else {
@@ -68,7 +68,7 @@ func (s *Stats) resolvePPR() {
 	}
 }
 
-func (s *Stats) eqPPRTime() bool {
+func (s *Stats) eqPPSTime() bool {
 	now := time.Now()
 	return s.t.Second() != now.Second() || s.t.Second() == now.Second() && s.t.After(now.Add(time.Second))
 }

@@ -39,7 +39,7 @@ func main() {
 	go func() {
 		for range time.Tick(1 * time.Second) {
 			time.Sleep(1 * time.Second)
-			fmt.Printf("PPR: %d\n", client.Stats.PPR())
+			fmt.Printf("PPS: %d\n", client.Stats.PPS())
 		}
 	}()
 
