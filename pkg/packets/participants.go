@@ -13,7 +13,7 @@ type ParticipantData struct {
 	TeamID        uint8    // Team id - see appendix
 	RaceNumber    uint8    // Race number of the car
 	Nationality   uint8    // Nationality of the driver
-	Name          [48]rune // Name of participant in UTF-8 format – null terminated, Will be truncated with … (U+2026) if too long
+	Name          [48]byte // Name of participant in UTF-8 format – null terminated, Will be truncated with … (U+2026) if too long
 	YourTelemetry uint8    // The player's UDP setting, 0 = restricted, 1 = public
 }
 

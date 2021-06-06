@@ -26,7 +26,7 @@ func ServeUDP(addr *net.UDPAddr) (*Server, error) {
 }
 
 func (s *Server) ReadSocket() (*packets.PacketHeader, interface{}, error) {
-	buf := make([]byte, 1024*5)
+	buf := make([]byte, 1024+1024/2)
 	_, _, err := s.conn.ReadFromUDP(buf)
 	if err != nil {
 		return nil, nil, errors.New(fmt.Sprintf("read error: %s", err))
