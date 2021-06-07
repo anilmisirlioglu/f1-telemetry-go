@@ -46,12 +46,14 @@ func main() {
 				log.Printf("Speed Trap: %f\n", trap.Speed)
 				speedTrapMetric.Set(float64(trap.Speed))
 			}
+			break
 		case event.FastestLap:
 			fp := packet.EventDetails.(*packets.FastestLap)
 			if fp.VehicleIdx == packet.Header.PlayerCarIndex {
 				log.Printf("Fastest Lap: %f seconds", fp.LapTime)
 				fastestLapMetric.Set(float64(fp.LapTime))
 			}
+			break
 		}
 	})
 	client.OnCarTelemetryPacket(func(packet *packets.PacketCarTelemetryData) {
