@@ -1,6 +1,6 @@
 # F1 Telemetry Client Sample App
 
-> IMPORTANT: Grafana dashboard not finished yet.
+![unknown](https://user-images.githubusercontent.com/20264712/120958456-734ac580-c760-11eb-98fd-70127c60dd29.png)
 
 ## Build & Run
 
