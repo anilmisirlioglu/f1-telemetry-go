@@ -5,25 +5,11 @@ import (
 	"net/http"
 	"os"
 	"os/signal"
-	"strconv"
 
 	"github.com/anilmisirlioglu/f1-telemetry-go/pkg/env/event"
 	"github.com/anilmisirlioglu/f1-telemetry-go/pkg/packets"
 	"github.com/anilmisirlioglu/f1-telemetry-go/pkg/telemetry"
-	"github.com/prometheus/client_golang/prometheus"
-	"github.com/prometheus/client_golang/prometheus/promauto"
 	"github.com/prometheus/client_golang/prometheus/promhttp"
-)
-
-var (
-	speedTrapMetric = promauto.NewGauge(prometheus.GaugeOpts{
-		Name: "f1_telemetry_speed_trap",
-		Help: "Speed Trap Metric",
-	})
-	speedMetric = promauto.NewGaugeVec(prometheus.GaugeOpts{
-		Name: "f1_telemetry_car_speed",
-		Help: "Car speed",
-	}, []string{"speed", "engine_rpm", "throttle", "drs"})
 )
 
 func main() {
@@ -53,20 +39,36 @@ func main() {
 
 	// events
 	client.OnEventPacket(func(packet *packets.PacketEventData) {
-		if packet.EventCodeString() == event.SpeedTrapTriggered {
-			log.Printf("Speed Trap: %f\n", packet.EventDetails.SpeedTrap.Speed)
-			speedTrapMetric.Set(float64(packet.EventDetails.SpeedTrap.Speed))
+		switch packet.EventCodeString() {
+		case event.SpeedTrapTriggered:
+			trap := packet.EventDetails.(*packets.SpeedTrap)
+			if trap.VehicleIdx == packet.Header.PlayerCarIndex {
+				log.Printf("Speed Trap: %f\n", trap.Speed)
+				speedTrapMetric.Set(float64(trap.Speed))
+			}
+		case event.FastestLap:
+			fp := packet.EventDetails.(*packets.FastestLap)
+			if fp.VehicleIdx == packet.Header.PlayerCarIndex {
+				log.Printf("Fastest Lap: %f seconds", fp.LapTime)
+				fastestLapMetric.Set(float64(fp.LapTime))
+			}
 		}
 	})
 	client.OnCarTelemetryPacket(func(packet *packets.PacketCarTelemetryData) {
-		car := packet.CarTelemetryData[0]
-		speedMetric.WithLabelValues(
-			strconv.Itoa(int(car.Speed)),
-			strconv.Itoa(int(car.EngineRPM)),
-			strconv.Itoa(int(car.Throttle)),
-			strconv.FormatBool(car.DRS != 0),
-		)
+		car := packet.CarTelemetryData[packet.Header.PlayerCarIndex]
+		speedMetric.Set(float64(car.Speed))
+		engineRPMMetric.Set(float64(car.EngineRPM))
+
+		rlBrakeTempMetric.Set(float64(car.BrakesTemperature[0]))
+		rrBrakeTempMetric.Set(float64(car.BrakesTemperature[1]))
+		flBrakeTempMetric.Set(float64(car.BrakesTemperature[2]))
+		frBrakeTempMetric.Set(float64(car.BrakesTemperature[3]))
 	})
+	client.OnLapPacket(func(packet *packets.PacketLapData) {
+		lap := packet.LapData[packet.Header.PlayerCarIndex]
+		lastLapTimeMetric.Set(float64(lap.LastLapTime))
+	})
+
 	log.Println("F1 telemetry client running")
 	client.Run() // run F1 Telemetry Client
 }
