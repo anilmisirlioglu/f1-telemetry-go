@@ -6,6 +6,7 @@ import (
 )
 
 var (
+	// Speed Metric
 	speedTrapMetric = promauto.NewGauge(prometheus.GaugeOpts{
 		Name: "f1_telemetry_speed_trap",
 		Help: "Speed Trap",
@@ -14,33 +15,40 @@ var (
 		Name: "f1_telemetry_car_speed",
 		Help: "Car Speed",
 	})
+
+	// Engine Metrics
 	engineRPMMetric = promauto.NewGauge(prometheus.GaugeOpts{
 		Name: "f1_telemetry_car_engine_rpm",
 		Help: "Car Engine RPM",
 	})
+	engineDamageMetric = promauto.NewGauge(prometheus.GaugeOpts{
+		Name: "f1_telemetry_engine_damage",
+		Help: "Car Engine Damage",
+	})
+
+	// Lap Time Metrics
 	fastestLapMetric = promauto.NewGauge(prometheus.GaugeOpts{
 		Name: "f1_telemetry_fastest_lap",
-		Help: "Fastest Lap",
+		Help: "Fastest Lap Time",
 	})
 	lastLapTimeMetric = promauto.NewGauge(prometheus.GaugeOpts{
 		Name: "f1_telemetry_last_lap",
-		Help: "Last Lap",
+		Help: "Last Lap Time",
 	})
+
+	// Tyre Metric
+	tyresAgeLapsMetric = promauto.NewGauge(prometheus.GaugeOpts{
+		Name: "f1_telemetry_tyres_age_lap",
+		Help: "Tyres Age Lap",
+	})
+	tyreWearMetric = promauto.NewGaugeVec(prometheus.GaugeOpts{
+		Name: "f1_telemetry_tyre_wear",
+		Help: "Tyres Wear",
+	}, []string{"tyre"})
+
 	// Brake Temp Metrics
-	rlBrakeTempMetric = promauto.NewGauge(prometheus.GaugeOpts{
-		Name: "f1_telemetry_brake_temp_rl",
-		Help: "Rear Left Tyre Brake Temperature",
-	})
-	rrBrakeTempMetric = promauto.NewGauge(prometheus.GaugeOpts{
-		Name: "f1_telemetry_brake_temp_rr",
-		Help: "Rear Right Tyre Brake Temperature",
-	})
-	flBrakeTempMetric = promauto.NewGauge(prometheus.GaugeOpts{
-		Name: "f1_telemetry_brake_temp_fl",
-		Help: "Front Left Tyre Brake Temperature",
-	})
-	frBrakeTempMetric = promauto.NewGauge(prometheus.GaugeOpts{
-		Name: "f1_telemetry_brake_temp_fr",
-		Help: "Front Right Tyre Brake Temperature",
-	})
+	brakesTempMetric = promauto.NewGaugeVec(prometheus.GaugeOpts{
+		Name: "f1_telemetry_brake_temp",
+		Help: "Brake Temperatures",
+	}, []string{"brake"})
 )

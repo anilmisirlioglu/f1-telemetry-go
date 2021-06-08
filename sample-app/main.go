@@ -12,6 +12,8 @@ import (
 	"github.com/prometheus/client_golang/prometheus/promhttp"
 )
 
+var wheelOrderArr = []string{"rl", "rr", "fl", "fr"}
+
 func main() {
 	// prometheus handler
 	http.Handle("/metrics", promhttp.Handler())
@@ -61,14 +63,22 @@ func main() {
 		speedMetric.Set(float64(car.Speed))
 		engineRPMMetric.Set(float64(car.EngineRPM))
 
-		rlBrakeTempMetric.Set(float64(car.BrakesTemperature[0]))
-		rrBrakeTempMetric.Set(float64(car.BrakesTemperature[1]))
-		flBrakeTempMetric.Set(float64(car.BrakesTemperature[2]))
-		frBrakeTempMetric.Set(float64(car.BrakesTemperature[3]))
+		for i, brake := range wheelOrderArr {
+			brakesTempMetric.WithLabelValues(brake).Set(float64(car.BrakesTemperature[i]))
+		}
 	})
 	client.OnLapPacket(func(packet *packets.PacketLapData) {
 		lap := packet.LapData[packet.Header.PlayerCarIndex]
 		lastLapTimeMetric.Set(float64(lap.LastLapTime))
+	})
+	client.OnCarStatusPacket(func(packet *packets.PacketCarStatusData) {
+		s := packet.CarStatusData[packet.Header.PlayerCarIndex]
+		engineDamageMetric.Set(float64(s.EngineDamage))
+		tyresAgeLapsMetric.Set(float64(s.TyresAgeLaps))
+
+		for i, tyre := range wheelOrderArr {
+			tyreWearMetric.WithLabelValues(tyre).Set(float64(s.TyresWear[i]))
+		}
 	})
 
 	log.Println("F1 telemetry client running")
