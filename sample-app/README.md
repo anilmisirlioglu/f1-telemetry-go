@@ -1,6 +1,6 @@
 # F1 Telemetry Client Sample App
 
-![unknown](https://user-images.githubusercontent.com/20264712/120958456-734ac580-c760-11eb-98fd-70127c60dd29.png)
+![unknown](https://user-images.githubusercontent.com/20264712/121112897-ccc2fb00-c819-11eb-9739-91ccddcbcdc4.png)
 
 ## Build & Run
 
