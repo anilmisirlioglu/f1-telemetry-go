@@ -2,6 +2,9 @@
 
 Telemetry client for F1 Game, written in Go. Currently, supported only the UDP 2020 format.
 
+![f1-telemetry-client](https://user-images.githubusercontent.com/20264712/121112897-ccc2fb00-c819-11eb-9739-91ccddcbcdc4.png)
+
+## Features
 - Event System
 - Rich Env Constants
 - UDP Stats (recv, err and packet per second rate),
