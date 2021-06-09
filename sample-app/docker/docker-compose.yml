@@ -42,7 +42,9 @@ services:
       context: ../
     ports:
       - 8080:8080
+      - 20777:20777/udp
     expose:
       - 8080
+      - 20777/udp
     networks:
       - monitoring

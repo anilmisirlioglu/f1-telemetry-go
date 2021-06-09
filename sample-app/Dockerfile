@@ -13,5 +13,6 @@ FROM alpine:latest
 COPY --from=builder /bin/app /bin/app
 
 EXPOSE 8080
+EXPOSE 20777/udp
 
 ENTRYPOINT ["/bin/app"]
