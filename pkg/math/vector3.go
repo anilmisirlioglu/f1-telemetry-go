@@ -114,7 +114,7 @@ func (v *Vector3) Dot(pos *Vector3) float32 {
 	return v.X*pos.X + v.Y*pos.Y + v.Z*pos.Z
 }
 
-func (v *Vector3) Cross(vector3 Vector3) *Vector3 {
+func (v *Vector3) Cross(vector3 *Vector3) *Vector3 {
 	return NewVector3(
 		v.Y*vector3.Z-v.Z*vector3.Y,
 		v.Z*vector3.X-v.X*vector3.Z,
