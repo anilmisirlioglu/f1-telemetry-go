@@ -56,10 +56,10 @@ func TestStats_PPS(t *testing.T) {
 		for {
 			select {
 			case <-done:
+				got = s.PPS()
 				break
 			case <-ticker.C:
 				s.IncRecv()
-				got = s.PPS()
 			}
 		}
 	}()
