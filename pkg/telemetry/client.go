@@ -18,12 +18,16 @@ type Client struct {
 
 func NewClient() (*Client, error) {
 	port := 20777 // default F1 2020 UDP port
-	return NewClientByCustomPort(&port)
+	return NewClientByCustomIpAddressAndPort("127.0.0.1", &port)
 }
 
 func NewClientByCustomPort(port *int) (*Client, error) {
+	return NewClientByCustomIpAddressAndPort("127.0.0.1", port)
+}
+
+func NewClientByCustomIpAddressAndPort(ipAddress string, port *int) (*Client, error) {
 	serv, err := udp.ServeUDP(&net.UDPAddr{
-		IP:   net.ParseIP("127.0.0.1"),
+		IP:   net.ParseIP(ipAddress),
 		Port: *port,
 	})
 	if err != nil {
