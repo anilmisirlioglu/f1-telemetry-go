@@ -16,21 +16,21 @@ type Client struct {
 	dispatcher *event.Dispatcher
 }
 
-const localHost = "127.0.0.1"
+const localhost = "127.0.0.1"
 
 func NewClient() (*Client, error) {
-	port := 20777 // default F1 2020 UDP port
-	return NewClientByCustomIpAddressAndPort(localHost, &port)
+	// default F1 game UDP port is 20777
+	return NewClientByCustomIpAddressAndPort(localhost, 20777)
 }
 
-func NewClientByCustomPort(port *int) (*Client, error) {
-	return NewClientByCustomIpAddressAndPort(localHost, port)
+func NewClientByCustomPort(port int) (*Client, error) {
+	return NewClientByCustomIpAddressAndPort(localhost, port)
 }
 
-func NewClientByCustomIpAddressAndPort(ipAddress string, port *int) (*Client, error) {
+func NewClientByCustomIpAddressAndPort(ipAddress string, port int) (*Client, error) {
 	serv, err := udp.ServeUDP(&net.UDPAddr{
 		IP:   net.ParseIP(ipAddress),
-		Port: *port,
+		Port: port,
 	})
 	if err != nil {
 		return nil, err
