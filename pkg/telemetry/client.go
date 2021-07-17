@@ -28,7 +28,7 @@ func NewClientByCustomPort(port int) (*Client, error) {
 }
 
 func NewClientByCustomIpAddressAndPort(ipAddress string, port int) (*Client, error) {
-	serv, err := udp.ServeUDP(&net.UDPAddr{
+	serv, err := udp.Serve(&net.UDPAddr{
 		IP:   net.ParseIP(ipAddress),
 		Port: port,
 	})

@@ -15,7 +15,7 @@ type Server struct {
 	conn *net.UDPConn
 }
 
-func ServeUDP(addr *net.UDPAddr) (*Server, error) {
+func Serve(addr *net.UDPAddr) (*Server, error) {
 	conn, err := net.ListenUDP("udp", addr)
 	if err != nil {
 		return nil, err
