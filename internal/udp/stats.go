@@ -11,14 +11,14 @@ type Stats struct {
 	t    time.Time
 	recv int // Success UDP Packet Count
 	err  int // Fail UDP Packet Count
-	ppr  int // Packet Per Second
+	pps  int // Packet Per Second
 }
 
 func NewStats() *Stats {
 	return &Stats{
 		recv: 0,
 		err:  0,
-		ppr:  0,
+		pps:  0,
 		t:    time.Now(),
 	}
 }
@@ -37,10 +37,10 @@ func (s *Stats) PPS() int {
 	defer s.Unlock()
 	if s.eqPPSTime() {
 		s.t = time.Now()
-		s.ppr = 0
+		s.pps = 0
 	}
 
-	return s.ppr
+	return s.pps
 }
 
 func (s *Stats) IncRecv() {
@@ -62,9 +62,9 @@ func (s *Stats) resolvePPS() {
 	defer s.Unlock()
 	if s.eqPPSTime() {
 		s.t = time.Now()
-		s.ppr = 0
+		s.pps = 0
 	} else {
-		s.ppr += 1
+		s.pps += 1
 	}
 }
 
