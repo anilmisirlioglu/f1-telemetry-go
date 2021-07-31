@@ -6,9 +6,9 @@ import (
 	"net"
 	"unsafe"
 
-	"github.com/anilmisirlioglu/f1-telemetry-go/pkg/env"
-	"github.com/anilmisirlioglu/f1-telemetry-go/pkg/env/event"
-	"github.com/anilmisirlioglu/f1-telemetry-go/pkg/packets"
+	"github.com/spaghettifunk/f1-telemetry-go/pkg/env"
+	"github.com/spaghettifunk/f1-telemetry-go/pkg/env/event"
+	"github.com/spaghettifunk/f1-telemetry-go/pkg/packets"
 )
 
 type Server struct {
