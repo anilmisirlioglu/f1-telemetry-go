@@ -16,7 +16,9 @@ type Client struct {
 	dispatcher *event.Dispatcher
 }
 
-const localhost = "0.0.0.0"
+// If you are not able to receive the packages from the game
+// try using 0.0.0.0 as your localhost address
+const localhost = "127.0.0.1"
 
 func NewClient() (*Client, error) {
 	// default F1 game UDP port is 20777
