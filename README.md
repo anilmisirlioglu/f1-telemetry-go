@@ -14,7 +14,7 @@ Telemetry client for F1 Game, written in Go. Currently, supported only the UDP 2
 ## Install
 
 ```bash
-go get -u github.com/spaghettifunk/f1-telemetry-go
+go get -u github.com/anilmisirlioglu/f1-telemetry-go
 ```
 
 ## Quick Start
