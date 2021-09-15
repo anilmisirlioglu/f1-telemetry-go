@@ -98,3 +98,11 @@ func (c *Client) OnFinalClassificationPacket(fn func(packet *packets.PacketFinal
 func (c *Client) OnLobbyInfoPacket(fn func(packet *packets.PacketLobbyInfoData)) {
 	c.dispatcher.On(env.PacketLobbyInfo, fn)
 }
+
+func (c *Client) OnCarDamagePacket(fn func(packet *packets.PacketCarDamageData)) {
+	c.dispatcher.On(env.PacketCarDamage, fn)
+}
+
+func (c *Client) OnSessionHistoryPacket(fn func(packet *packets.PacketSessionHistoryData)) {
+	c.dispatcher.On(env.PacketCarDamage, fn)
+}

@@ -13,4 +13,10 @@ const (
 	RaceWinner         string = "RCWN" // The race winner is announced
 	PenaltyIssued      string = "PENA" // A penalty has been issued – details in event
 	SpeedTrapTriggered string = "SPTP" // Speed trap has been triggered by fastest speed
+	StartLights        string = "STLG" // Start lights – number shown
+	LightsOut          string = "LGOT" // Lights out
+	DriveThroughServed string = "DTSV" // Drive through penalty served
+	StopGoServed       string = "SGSV" // Stop go penalty served
+	Flashback          string = "FLBK" // Flashback activated
+	ButoonStatus       string = "BUTN" // Button status changed
 )

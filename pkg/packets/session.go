@@ -12,11 +12,14 @@ type MarshalZone struct {
 }
 
 type WeatherForecastSample struct {
-	SessionType      uint8 // 0 = unknown, 1 = P1, 2 = P2, 3 = P3, 4 = Short P, 5 = Q1, 6 = Q2, 7 = Q3, 8 = Short Q, 9 = OSQ, 10 = R, 11 = R2, 12 = Time Trial
-	TimeOffset       uint8 // Time in minutes the forecast is for
-	Weather          uint8 // Weather 0 = clear, 1 = light cloud, 2 = overcast, 3 = light rain, 4 = heavy rain, 5 = storm
-	TrackTemperature int8  // Track temp. in degrees celsius
-	AirTemperature   int8  // Air temp. in degrees celsius
+	SessionType            uint8 // 0 = unknown, 1 = P1, 2 = P2, 3 = P3, 4 = Short P, 5 = Q1, 6 = Q2, 7 = Q3, 8 = Short Q, 9 = OSQ, 10 = R, 11 = R2, 12 = Time Trial
+	TimeOffset             uint8 // Time in minutes the forecast is for
+	Weather                uint8 // Weather 0 = clear, 1 = light cloud, 2 = overcast, 3 = light rain, 4 = heavy rain, 5 = storm
+	TrackTemperature       int8  // Track temp. in degrees celsius
+	TrackTemperatureChange int8  // Track temp. change - 0 = up, 1 = down, 2 = no change
+	AirTemperature         int8  // Air temp. in degrees celsius
+	AirTemperatureChange   int8  // Air temp. change - 0 = up, 1 = down, 2 = no change
+	RainPercentage         uint8 // Rain percentage (0-100)
 }
 
 type PacketSessionData struct {
@@ -42,4 +45,21 @@ type PacketSessionData struct {
 	NetworkGame               uint8                     // 0 = offline, 1 = online
 	NumWeatherForecastSamples uint8                     // Number of weather samples to follow
 	WeatherForecastSamples    [20]WeatherForecastSample // Array of weather forecast samples
+	ForecastAccuracy          uint8                     // 0 = Perfect, 1 = Approximate
+	AIDifficulty              uint8                     // AI Difficulty rating – 0-110
+	SeasonLinkIdentifier      uint32                    // Identifier for season - persists across saves
+	WeekendLinkIdentifier     uint32                    // Identifier for weekend - persists across saves
+	SessionLinkIdentifier     uint32                    // Identifier for session - persists across saves
+	PitStopWindowIdealLap     uint8                     //Ideal lap to pit on for current strategy (player)
+	PitStopWindowLatestLap    uint8                     // Latest lap to pit on for current strategy (player)
+	PitStopRejoinPosition     uint8                     // Predicted position to rejoin at (player)
+	SteeringAssist            uint8                     // 0 = off, 1 = on
+	BreakingAssist            uint8                     // 0 = off, 1 = low, 2 = medium, 3 = high
+	GearboxAssist             uint8                     // 1 = manual, 2 = manual & suggested gear, 3 = auto
+	PitAssist                 uint8                     // 0 = off, 1 = on
+	PitReleaseAssist          uint8                     // 0 = off, 1 = on
+	ERSAssist                 uint8                     // 0 = off, 1 = on
+	DRSAssist                 uint8                     // 0 = off, 1 = on
+	DynamicRacingLine         uint8                     // 0 = off, 1 = corners only, 2 = full
+	DynamicRangeLineType      uint8                     // 0 = 2D, 1 = 3D
 }

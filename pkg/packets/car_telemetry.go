@@ -28,8 +28,7 @@ type CarTelemetryData struct {
 type PacketCarTelemetryData struct {
 	Header                       PacketHeader
 	CarTelemetryData             [22]CarTelemetryData
-	ButtonStatus                 uint32 // Bit flags specifying which buttons are being pressed
-	MFDPanelIndex                uint8  // Index of MFD panel open, see for more details: docs/CAR.md#mfd-index-panel
-	MFDPanelIndexSecondaryPlayer uint8  // See above
-	SuggestedGear                int8   // Suggested gear for the player (1-8), 0 if no gear suggested
+	MFDPanelIndex                uint8 // Index of MFD panel open, see for more details: docs/CAR.md#mfd-index-panel
+	MFDPanelIndexSecondaryPlayer uint8 // See above
+	SuggestedGear                int8  // Suggested gear for the player (1-8), 0 if no gear suggested
 }
