@@ -69,12 +69,15 @@ func main() {
 	})
 	client.OnLapPacket(func(packet *packets.PacketLapData) {
 		lap := packet.LapData[packet.Header.PlayerCarIndex]
-		lastLapTimeMetric.Set(float64(lap.LastLapTime))
+		lastLapTimeMetric.Set(float64(lap.LastLapTimeInMS))
 	})
 	client.OnCarStatusPacket(func(packet *packets.PacketCarStatusData) {
 		s := packet.CarStatusData[packet.Header.PlayerCarIndex]
-		engineDamageMetric.Set(float64(s.EngineDamage))
 		tyresAgeLapsMetric.Set(float64(s.TyresAgeLaps))
+	})
+	client.OnCarDamagePacket(func(packet *packets.PacketCarDamageData) {
+		s := packet.CarDamageData[packet.Header.PlayerCarIndex]
+		engineDamageMetric.Set(float64(s.EngineDamage))
 
 		for i, tyre := range wheelOrderArr {
 			tyreWearMetric.WithLabelValues(tyre).Set(float64(s.TyresWear[i]))
