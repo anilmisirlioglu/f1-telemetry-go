@@ -34,8 +34,31 @@ type Penalty struct {
 }
 
 type SpeedTrap struct {
-	VehicleIdx uint8   // Vehicle index of the vehicle triggering speed trap
-	Speed      float32 // Top speed achieved in kilometres per hour
+	VehicleIdx              uint8   // Vehicle index of the vehicle triggering speed trap
+	Speed                   float32 // Top speed achieved in kilometres per hour
+	OverallFastestInSession uint8   // Overall fastest speed in session = 1, otherwise 0
+	DriverFastestInSession  uint8   // Fastest speed for driver in session = 1, otherwise 0
+}
+
+type StartLights struct {
+	NumLights uint8 // Number of lights showing
+}
+
+type DriveThroughPenaltyServed struct {
+	VehicleIdx uint8 // Vehicle index of the vehicle serving drive through
+}
+
+type StopGoPenaltyServed struct {
+	VehicleIdx uint8 // Vehicle index of the vehicle serving stop go
+}
+
+type Flashback struct {
+	FlashbackFrameIdentifier uint32  // Frame identifier flashed back to
+	FlashbackSessionTime     float32 // Session time flashed back to
+}
+
+type Buttons struct {
+	ButtonStatus uint32 // Bit flags specifying which buttons are being pressed currently - see appendices
 }
 
 // PrePacketEventData DO NOT USE

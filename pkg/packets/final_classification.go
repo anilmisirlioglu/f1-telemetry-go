@@ -15,7 +15,7 @@ type FinalClassificationData struct {
 	Points           uint8    // Number of points scored
 	NumPitStops      uint8    // Number of pit stops made
 	ResultStatus     uint8    // Result status - 0 = invalid, 1 = inactive, 2 = active, 3 = finished, 4 = disqualified, 5 = not classified, 6 = retired
-	BestLapTime      float32  // Best lap time of the session in seconds
+	BestLapTimeInMS  uint32   // Best lap time of the session in milliseconds
 	TotalRaceTime    float64  // Total race time in seconds without penalties
 	PenaltiesTime    uint8    // Total penalties accumulated in seconds
 	NumPenalties     uint8    // Number of penalties applied to this driver

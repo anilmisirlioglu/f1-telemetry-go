@@ -16,6 +16,8 @@ type Client struct {
 	dispatcher *event.Dispatcher
 }
 
+// If you are not able to receive the packages from the game
+// try using 0.0.0.0 as your localhost address
 const localhost = "127.0.0.1"
 
 func NewClient() (*Client, error) {
@@ -97,4 +99,12 @@ func (c *Client) OnFinalClassificationPacket(fn func(packet *packets.PacketFinal
 
 func (c *Client) OnLobbyInfoPacket(fn func(packet *packets.PacketLobbyInfoData)) {
 	c.dispatcher.On(env.PacketLobbyInfo, fn)
+}
+
+func (c *Client) OnCarDamagePacket(fn func(packet *packets.PacketCarDamageData)) {
+	c.dispatcher.On(env.PacketCarDamage, fn)
+}
+
+func (c *Client) OnSessionHistoryPacket(fn func(packet *packets.PacketSessionHistoryData)) {
+	c.dispatcher.On(env.PacketCarDamage, fn)
 }

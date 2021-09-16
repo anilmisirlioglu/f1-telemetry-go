@@ -11,6 +11,7 @@ type ParticipantData struct {
 	AIControlled  uint8    // Whether the vehicle is AI (1) or Human (0) controlled
 	DriverID      uint8    // Driver id - see appendix
 	TeamID        uint8    // Team id - see appendix
+	MyTeam        uint8    // My team flag – 1 = My Team, 0 = otherwise
 	RaceNumber    uint8    // Race number of the car
 	Nationality   uint8    // Nationality of the driver
 	Name          [48]byte // Name of participant in UTF-8 format – null terminated, Will be truncated with … (U+2026) if too long

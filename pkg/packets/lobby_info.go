@@ -12,6 +12,7 @@ type LobbyInfoData struct {
 	TeamID       uint8    // Team ID - see docs/IDS.md#team-ids (255 if no team currently selected)
 	Nationality  uint8    // Nationality of the driver
 	Name         [48]byte // Name of participant in UTF-8 format – null terminated // Will be truncated with ... (U+2026) if too long
+	CarNumber    uint8    // Car number of the player
 	ReadyStatus  uint8    // 0 = not ready, 1 = ready, 2 = spectating
 }
 

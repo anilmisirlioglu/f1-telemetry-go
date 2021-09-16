@@ -3,7 +3,7 @@ package packets
 // 24 byte
 
 type PacketHeader struct {
-	PacketFormat            uint16  // 2020
+	PacketFormat            uint16  // 2021
 	GameMajorVersion        uint8   // Game major version - "X.00"
 	GameMinorVersion        uint8   // Game minor version - "1.XX"
 	PacketVersion           uint8   // Version of this packet type, all start from 1
