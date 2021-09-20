@@ -47,7 +47,7 @@ func main() {
 	log.Fatal(err)
   }
 
-  client.OnCarDamagePacket(func(packet *packets.PacketEventData) {
+  client.OnCarDamagePacket(func(packet *packets.PacketCarDamageData) {
   	fmt.Printf("Code: %s\n", packet.EventCodeString())
   })
 
