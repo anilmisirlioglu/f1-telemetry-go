@@ -28,7 +28,7 @@ func (s *Server) ReadSocket() (*packets.PacketHeader, interface{}, error) {
 	buf := make([]byte, 1024+1024/2)
 	_, _, err := s.conn.ReadFromUDP(buf)
 	if err != nil {
-		return nil, nil, fmt.Errorf(fmt.Sprintf("read error: %s", err))
+		return nil, nil, fmt.Errorf("read error: %s", err)
 	}
 
 	header := new(packets.PacketHeader)
