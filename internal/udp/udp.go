@@ -38,11 +38,11 @@ func (s *Server) ReadSocket() (*packets.PacketHeader, interface{}, error) {
 
 	pack := newPacketById(header.PacketID)
 	if pack == nil {
-		return nil, nil, fmt.Errorf(fmt.Sprintf("invalid packet: %d", header.PacketID))
+		return nil, nil, fmt.Errorf("invalid packet: %d", header.PacketID)
 	}
 
 	if err = ReadPacket(buf, pack); err != nil {
-		return nil, nil, fmt.Errorf(fmt.Sprintf("%d: %s", header.PacketID, err))
+		return nil, nil, fmt.Errorf("%d: %s", header.PacketID, err)
 	}
 
 	if header.PacketID == env.PacketEvent {
@@ -51,7 +51,7 @@ func (s *Server) ReadSocket() (*packets.PacketHeader, interface{}, error) {
 		if details != nil {
 			err = ReadPacket(pre.EventDetails[:unsafe.Sizeof(details)], details)
 			if err != nil {
-				return nil, nil, fmt.Errorf(fmt.Sprintf("event packet details read error: %s", err))
+				return nil, nil, fmt.Errorf("event packet details read error: %s", err)
 			}
 		}
 		pack = &packets.PacketEventData{
