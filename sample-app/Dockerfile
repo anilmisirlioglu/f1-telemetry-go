@@ -8,7 +8,7 @@ RUN go mod download
 COPY . ./
 RUN go build -o /bin/app
 
-FROM alpine:latest
+FROM alpine:3.14
 
 COPY --from=builder /bin/app /bin/app
 
