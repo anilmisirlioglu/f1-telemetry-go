@@ -148,6 +148,12 @@ func TestUDP_ResolveEventDetails(t *testing.T) {
 		NewEventTestCase(event.RaceWinner, new(packets.RaceWinner)),
 		NewEventTestCase(event.PenaltyIssued, new(packets.Penalty)),
 		NewEventTestCase(event.SpeedTrapTriggered, new(packets.SpeedTrap)),
+		NewEventTestCase(event.StartLights, new(packets.StartLights)),
+		NewEventTestCase(event.LightsOut, new(packets.StartLights)),
+		NewEventTestCase(event.DriveThroughServed, new(packets.DriveThroughPenaltyServed)),
+		NewEventTestCase(event.StopGoServed, new(packets.StopGoPenaltyServed)),
+		NewEventTestCase(event.Flashback, new(packets.Flashback)),
+		NewEventTestCase(event.ButtonStatus, new(packets.Buttons)),
 	}
 
 	for _, e := range events {
@@ -180,6 +186,8 @@ func TestUDP_NewPacketById(t *testing.T) {
 		NewPacketTestCase(env.PacketCarStatus, new(packets.PacketCarStatusData)),
 		NewPacketTestCase(env.PacketFinalClassification, new(packets.PacketFinalClassificationData)),
 		NewPacketTestCase(env.PacketLobbyInfo, new(packets.PacketLobbyInfoData)),
+		NewPacketTestCase(env.PacketCarDamage, new(packets.PacketCarDamageData)),
+		NewPacketTestCase(env.PacketSessionHistory, new(packets.PacketSessionHistoryData)),
 	}
 
 	for _, p := range packs {

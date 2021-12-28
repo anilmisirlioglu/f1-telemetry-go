@@ -109,6 +109,18 @@ func resolveEventDetails(pre *packets.PrePacketEventData) interface{} {
 		return new(packets.Penalty)
 	case event.SpeedTrapTriggered:
 		return new(packets.SpeedTrap)
+	case event.StartLights:
+		return new(packets.StartLights)
+	case event.LightsOut:
+		return new(packets.StartLights)
+	case event.DriveThroughServed:
+		return new(packets.DriveThroughPenaltyServed)
+	case event.StopGoServed:
+		return new(packets.StopGoPenaltyServed)
+	case event.Flashback:
+		return new(packets.Flashback)
+	case event.ButtonStatus:
+		return new(packets.Buttons)
 	}
 
 	return nil
