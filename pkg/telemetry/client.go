@@ -52,6 +52,7 @@ func (c *Client) Run() {
 		if err != nil {
 			c.Stats.IncErr()
 			log.Println(err)
+			continue
 		}
 
 		c.Stats.IncRecv()
@@ -106,5 +107,5 @@ func (c *Client) OnCarDamagePacket(fn func(packet *packets.PacketCarDamageData))
 }
 
 func (c *Client) OnSessionHistoryPacket(fn func(packet *packets.PacketSessionHistoryData)) {
-	c.dispatcher.On(env.PacketCarDamage, fn)
+	c.dispatcher.On(env.PacketSessionHistory, fn)
 }

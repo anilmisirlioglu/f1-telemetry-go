@@ -86,6 +86,10 @@ func newPacketById(packetId uint8) interface{} {
 		return new(packets.PacketFinalClassificationData)
 	case env.PacketLobbyInfo:
 		return new(packets.PacketLobbyInfoData)
+	case env.PacketCarDamage:
+		return new(packets.PacketCarDamageData)
+	case env.PacketSessionHistory:
+		return new(packets.PacketSessionHistoryData)
 	}
 
 	return nil
