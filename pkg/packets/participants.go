@@ -24,6 +24,10 @@ type PacketParticipantsData struct {
 	Participants  [22]ParticipantData // cars on HUD
 }
 
+func (p *PacketParticipantsData) Self() ParticipantData {
+	return p.Participants[p.Header.PlayerCarIndex]
+}
+
 func (p *ParticipantData) NameToString() string {
 	return string(p.Name[:])
 }

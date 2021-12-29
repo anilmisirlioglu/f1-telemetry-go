@@ -37,3 +37,7 @@ type PacketLapData struct {
 	Header  PacketHeader
 	LapData [22]LapData // Lap data for all cars on track
 }
+
+func (p *PacketLapData) Self() LapData {
+	return p.LapData[p.Header.PlayerCarIndex]
+}

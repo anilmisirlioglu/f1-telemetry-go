@@ -23,6 +23,10 @@ type PacketLobbyInfoData struct {
 	LobbyPlayers [22]LobbyInfoData
 }
 
+func (p *PacketLobbyInfoData) Self() LobbyInfoData {
+	return p.LobbyPlayers[p.Header.PlayerCarIndex]
+}
+
 func (p *LobbyInfoData) NameToString() string {
 	return string(p.Name[:])
 }
