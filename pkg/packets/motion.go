@@ -51,6 +51,10 @@ type PacketMotionData struct {
 	FrontWheelsAngle       float32    // Current front wheels angle in radians
 }
 
+func (p *PacketMotionData) Self() CarMotionData {
+	return p.CarMotionData[p.Header.PlayerCarIndex]
+}
+
 func (p *PacketMotionData) LocalVelocityAsVector3() *math.Vector3 {
 	return math.NewVector3(p.LocalVelocityX, p.LocalVelocityY, p.LocalVelocityZ)
 }

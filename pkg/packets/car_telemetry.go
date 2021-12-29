@@ -32,3 +32,7 @@ type PacketCarTelemetryData struct {
 	MFDPanelIndexSecondaryPlayer uint8 // See above
 	SuggestedGear                int8  // Suggested gear for the player (1-8), 0 if no gear suggested
 }
+
+func (p *PacketCarTelemetryData) Self() CarTelemetryData {
+	return p.CarTelemetryData[p.Header.PlayerCarIndex]
+}

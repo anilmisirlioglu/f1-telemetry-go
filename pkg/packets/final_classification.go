@@ -29,3 +29,7 @@ type PacketFinalClassificationData struct {
 	NumCars            uint8        // Number of cars in the final classification
 	ClassificationData [22]FinalClassificationData
 }
+
+func (p *PacketFinalClassificationData) Self() FinalClassificationData {
+	return p.ClassificationData[p.Header.PlayerCarIndex]
+}

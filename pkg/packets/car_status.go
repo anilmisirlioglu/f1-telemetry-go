@@ -36,3 +36,7 @@ type PacketCarStatusData struct {
 	Header        PacketHeader
 	CarStatusData [22]CarStatusData
 }
+
+func (p *PacketCarStatusData) Self() CarStatusData {
+	return p.CarStatusData[p.Header.PlayerCarIndex]
+}
