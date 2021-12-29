@@ -23,6 +23,8 @@ github.com/anilmisirlioglu/f1-telemetry-go v1.0.0 h1:gkDIomAWHdUKXwzs0LkkwPznUCQ
 github.com/anilmisirlioglu/f1-telemetry-go v1.0.0/go.mod h1:1H/gS0IQOIH8l6fdfzuxkvhBMb1DnU9KuhBwXokcK00=
 github.com/anilmisirlioglu/f1-telemetry-go v1.0.1-0.20210916181812-3fbf1ad84ce4 h1:Q5uyQ6Dl/s5G0hx2r7d/wVhx637+ADSHLbWT9Ctuuv8=
 github.com/anilmisirlioglu/f1-telemetry-go v1.0.1-0.20210916181812-3fbf1ad84ce4/go.mod h1:1H/gS0IQOIH8l6fdfzuxkvhBMb1DnU9KuhBwXokcK00=
+github.com/anilmisirlioglu/f1-telemetry-go v1.0.1-0.20211229181608-3c79378fc4ce h1:NJcezyA1sFqs2/e8TLORcKR5Ta+c0vrVvKVlCl7jheo=
+github.com/anilmisirlioglu/f1-telemetry-go v1.0.1-0.20211229181608-3c79378fc4ce/go.mod h1:1H/gS0IQOIH8l6fdfzuxkvhBMb1DnU9KuhBwXokcK00=
 github.com/apache/thrift v0.12.0/go.mod h1:cp2SuWMxlEZw2r+iP2GNCdIi4C1qmUzdZFSVb+bacwQ=
 github.com/apache/thrift v0.13.0/go.mod h1:cp2SuWMxlEZw2r+iP2GNCdIi4C1qmUzdZFSVb+bacwQ=
 github.com/armon/circbuf v0.0.0-20150827004946-bbbad097214e/go.mod h1:3U/XgcO3hCbHZ8TKRvWD2dDTCfh9M9ya+I9JpbB7O8o=
