@@ -25,3 +25,6 @@
 | 24 | Suzuka Short |
 | 25 | Hanoi |
 | 26 | Zandvoort |
+| 27 | Imola |
+| 28 | Portimão |
+| 29 | Jeddah |

@@ -2,8 +2,8 @@
 | 1 | Ferrari |
 | 2 | Red Bul Racing |
 | 3 | Williams |
-| 4 | Racing Point |
-| 5 | Renault |
+| 4 | Aston Martin |
+| 5 | Alpine |
 | 6 | Alpha Tauri |
 | 7 | Haas |
 | 8 | McLaren |
@@ -57,4 +57,36 @@
 | 63 | Ferrari 1990 |
 | 64 | McLaren 2010 |
 | 65 | Ferrari 2010 |
+| 70 | ArtGP 2020 |
+| 71 | Campos 2020 |   
+| 72 | Carlin 2020 |   
+| 73 | Charouz 2020 |
+| 74 | Dam 2020 |
+| 75 | UniVirtuosi 2020 |
+| 76 | MPMotorsport 2020 |
+| 77 | Prema 2020 |
+| 78 | Trident 2020 |
+| 79 | BWT 2020 |
+| 80 | Hitech 2020 |
+| 85 | Mercedes 2020 |
+| 86 | Ferrari 2020 |
+| 87 | RedBull 2020 |
+| 88 | Williams 2020 |
+| 89 | RacingPoint 2020 |
+| 90 | Renault 2020 |
+| 91 | AlphaTauri 2020 |
+| 92 | Haas 2020 |
+| 93 | McLaren 2020 |
+| 94 | AlfaRomeo 2020 |
+| 106 | Prema 2021 |
+| 107 | UniVirtuosi 2021 |
+| 108 | Carlin 2021 |
+| 109 | Hitech 2021 |
+| 110 | ArtGP 2021 |
+| 111 | MPMotorsport 2021 |
+| 112 | Charouz 2021 |
+| 113 | Dams 2021 |
+| 114 | Campos 2021 |
+| 115 | BWT 2021 |
+| 116 | Trident 2021 |
 | 255 | My Team |

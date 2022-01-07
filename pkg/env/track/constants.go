@@ -29,4 +29,7 @@ const (
 	SuzukaShort      uint8 = 24
 	Hanoi            uint8 = 25
 	Zandvoort        uint8 = 26
+	Imola            uint8 = 27
+	Partimao         uint8 = 28
+	Jeddah           uint8 = 29
 )

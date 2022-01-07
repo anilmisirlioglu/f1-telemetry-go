@@ -1,11 +1,11 @@
 ## Fuel Mix
 
-| ID | Fuel Mix |
-| --- | --- |
-| 0 | Lean |
-| 1 | Standard |
-| 2 | Rich |
-| 3 | Max |
+| ID  | Fuel Mix |
+|-----|----------|
+| 0   | Lean     |
+| 1   | Standard |
+| 2   | Rich     |
+| 3   | Max      |
 
 ## DRS
 
@@ -15,12 +15,12 @@
 
 ## ERS Deploy Mode
 
-| ID | Mode |
-| --- | --- |
-| 0 | none |
-| 1 | medium |
-| 2 | overtake |
-| 3 | hotlap |
+| ID  | Mode     |
+|-----|----------|
+| 0   | none     |
+| 1   | medium   |
+| 2   | overtake |
+| 3   | hotlap   |
 
 ## SLI Pro Support
 
@@ -34,13 +34,13 @@
 
 Single player, race;
 
-| ID | Index |
-| --- | --- |
-| 0 | Car Setup |
-| 1 | Pits |
-| 2 | Damage |
-| 3 | Engine |
-| 4 | Temperatures |
+| ID  | Index        |
+|-----|--------------|
+| 0   | Car Setup    |
+| 1   | Pits         |
+| 2   | Damage       |
+| 3   | Engine       |
+| 4   | Temperatures |
 
 > May vary depending on game mode.
 

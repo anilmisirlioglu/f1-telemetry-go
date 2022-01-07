@@ -53,36 +53,35 @@
 | 53 | Monegasque |
 | 54 | New Zealander |
 | 55 | Nicaraguan |
-| 56 | North Korean |
-| 57 | Northern Irish |
-| 58 | Norwegian |
-| 59 | Omani |
-| 60 | Pakistani |
-| 61 | Panamanian |
-| 62 | Paraguayan |
-| 63 | Peruvian |
-| 64 | Polish |
-| 65 | Portuguese |
-| 66 | Qatari |
-| 67 | Romanian |
-| 68 | Russian |
-| 69 | Salvadoran |
-| 70 | Saudi |
-| 71 | Scottish |
-| 72 | Serbian |
-| 73 | Singaporean |
-| 74 | Slovakian |
-| 75 | Slovenian |
-| 76 | South Korean |
-| 77 | South African |
-| 78 | Spanish |
-| 79 | Swedish |
-| 80 | Swiss |
-| 81 | Thai |
-| 82 | Turkish |
-| 83 | Uruguayan |
-| 84 | Ukrainian |
-| 85 | Venezuelan |
-| 86 | Welsh |
-| 87 | Barbadian |
-| 88 | Vietnamese |
+| 56 | Northern Irish |
+| 57 | Norwegian |
+| 58 | Omani |
+| 69 | Pakistani |
+| 60 | Panamanian |
+| 61 | Paraguayan |
+| 62 | Peruvian |
+| 63 | Polish |
+| 64 | Portuguese |
+| 65 | Qatari |
+| 66 | Romanian |
+| 67 | Russian |
+| 68 | Salvadoran |
+| 69 | Saudi |
+| 70 | Scottish |
+| 71 | Serbian |
+| 72 | Singaporean |
+| 73 | Slovakian |
+| 74 | Slovenian |
+| 75 | South Korean |
+| 76 | South African |
+| 77 | Spanish |
+| 78 | Swedish |
+| 79 | Swiss |
+| 80 | Thai |
+| 81 | Turkish |
+| 82 | Uruguayan |
+| 83 | Ukrainian |
+| 84 | Venezuelan |
+| 85 | Welsh |
+| 86 | Barbadian |
+| 87 | Vietnamese |
