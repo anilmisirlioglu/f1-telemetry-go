@@ -29,7 +29,7 @@ func NewClientByCustomPort(port int) (*Client, error) {
 	return NewClientByCustomIpAddressAndPort(localhost, port)
 }
 
-func NewClientByUDPAddr(addr *net.UDPAddr) (*Client, error) {
+func NewClientByAddr(addr *net.UDPAddr) (*Client, error) {
 	return NewClientByCustomIpAddressAndPort(addr.IP.String(), addr.Port)
 }
 
