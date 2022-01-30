@@ -17,6 +17,7 @@ type CarTelemetryData struct {
 	EngineRPM               uint16     // Engine RPM
 	DRS                     uint8      // 0 = off, 1 = on
 	RevLightsPercent        uint8      // Rev lights indicator (percentage)
+	RevLightsBitValue       uint16     // Rev lights (bit 0 = leftmost LED, bit 14 = rightmost LED)
 	BrakesTemperature       [4]uint16  // Brakes temperature (celsius)
 	TyresSurfaceTemperature [4]uint8   // Tyres surface temperature (celsius)
 	TyresInnerTemperature   [4]uint8   // Tyres inner temperature (celsius)
