@@ -1,104 +1,104 @@
 package team
 
 // Team IDs
-type TeamsType uint8
+type Team uint8
 
 const (
-	Mercedes                TeamsType = 0
-	Ferrari                 TeamsType = 1
-	RedBulRacing            TeamsType = 2
-	Williams                TeamsType = 3
-	AstonMartin             TeamsType = 4
-	Alpine                  TeamsType = 5
-	AlphaTauri              TeamsType = 6
-	Haas                    TeamsType = 7
-	McLaren                 TeamsType = 8
-	AlfaRomeo               TeamsType = 9
-	McLaren1988             TeamsType = 10
-	McLaren1991             TeamsType = 11
-	Williams1992            TeamsType = 12
-	Ferrari1995             TeamsType = 13
-	Williams1996            TeamsType = 14
-	McLaren1998             TeamsType = 15
-	Ferrari2002             TeamsType = 16
-	Ferrari2004             TeamsType = 17
-	Renault2006             TeamsType = 18
-	Ferrari2007             TeamsType = 19
-	McLaren2008             TeamsType = 20
-	RedBull2010             TeamsType = 21
-	Ferrari1976             TeamsType = 22
-	ARTGrandPrix            TeamsType = 23
-	CamposVexatecRacing     TeamsType = 24
-	Carlin                  TeamsType = 25
-	CharouzRacingSystem     TeamsType = 26
-	DAMS                    TeamsType = 27
-	RussianTime             TeamsType = 28
-	MPMotorsport            TeamsType = 29
-	Pertamina               TeamsType = 30
-	McLaren1990             TeamsType = 31
-	Trident                 TeamsType = 32
-	BWTArden                TeamsType = 33
-	McLaren1976             TeamsType = 34
-	Lotus1972               TeamsType = 35
-	Ferrari1979             TeamsType = 36
-	McLaren1982             TeamsType = 37
-	Williams2003            TeamsType = 38
-	Brawn2009               TeamsType = 39
-	Lotus1978               TeamsType = 40
-	F1GenericCar            TeamsType = 41
-	ArtGP2019               TeamsType = 42
-	Campos2019              TeamsType = 43
-	Carlin2019              TeamsType = 44
-	SauberJuniorCharouz2019 TeamsType = 45
-	Dams2019                TeamsType = 46
-	UniVirtuosi2019         TeamsType = 47
-	MPMotorsport2019        TeamsType = 48
-	Prema2019               TeamsType = 49
-	Trident2019             TeamsType = 50
-	Arden2019               TeamsType = 51
-	Benetton1994            TeamsType = 53
-	Benetton1995            TeamsType = 54
-	Ferrari2000             TeamsType = 55
-	Jordan1991              TeamsType = 56
-	Ferrari1990             TeamsType = 63
-	McLaren2010             TeamsType = 64
-	Ferrari2010             TeamsType = 64
-	ArtGP2020               TeamsType = 70
-	Campos2020              TeamsType = 71
-	Carlin2020              TeamsType = 72
-	Charouz2020             TeamsType = 73
-	Dam2020                 TeamsType = 74
-	UniVirtuosi2020         TeamsType = 75
-	MPMotorsport2020        TeamsType = 76
-	Prema2020               TeamsType = 77
-	Trident2020             TeamsType = 78
-	BWT2020                 TeamsType = 79
-	Hitech2020              TeamsType = 80
-	Mercedes2020            TeamsType = 85
-	Ferrari2020             TeamsType = 86
-	RedBull2020             TeamsType = 87
-	Williams2020            TeamsType = 88
-	RacingPoint2020         TeamsType = 89
-	Renault2020             TeamsType = 90
-	AlphaTauri2020          TeamsType = 91
-	Haas2020                TeamsType = 92
-	McLaren2020             TeamsType = 93
-	AlfaRomeo2020           TeamsType = 94
-	Prema2021               TeamsType = 106
-	UniVirtuosi2021         TeamsType = 107
-	Carlin2021              TeamsType = 108
-	Hitech2021              TeamsType = 109
-	ArtGP2021               TeamsType = 110
-	MPMotorsport2021        TeamsType = 111
-	Charouz2021             TeamsType = 112
-	Dams2021                TeamsType = 113
-	Campos2021              TeamsType = 114
-	BWT2021                 TeamsType = 115
-	Trident2021             TeamsType = 116
-	MyTeam                  TeamsType = 255
+	Mercedes                Team = 0
+	Ferrari                 Team = 1
+	RedBulRacing            Team = 2
+	Williams                Team = 3
+	AstonMartin             Team = 4
+	Alpine                  Team = 5
+	AlphaTauri              Team = 6
+	Haas                    Team = 7
+	McLaren                 Team = 8
+	AlfaRomeo               Team = 9
+	McLaren1988             Team = 10
+	McLaren1991             Team = 11
+	Williams1992            Team = 12
+	Ferrari1995             Team = 13
+	Williams1996            Team = 14
+	McLaren1998             Team = 15
+	Ferrari2002             Team = 16
+	Ferrari2004             Team = 17
+	Renault2006             Team = 18
+	Ferrari2007             Team = 19
+	McLaren2008             Team = 20
+	RedBull2010             Team = 21
+	Ferrari1976             Team = 22
+	ARTGrandPrix            Team = 23
+	CamposVexatecRacing     Team = 24
+	Carlin                  Team = 25
+	CharouzRacingSystem     Team = 26
+	DAMS                    Team = 27
+	RussianTime             Team = 28
+	MPMotorsport            Team = 29
+	Pertamina               Team = 30
+	McLaren1990             Team = 31
+	Trident                 Team = 32
+	BWTArden                Team = 33
+	McLaren1976             Team = 34
+	Lotus1972               Team = 35
+	Ferrari1979             Team = 36
+	McLaren1982             Team = 37
+	Williams2003            Team = 38
+	Brawn2009               Team = 39
+	Lotus1978               Team = 40
+	F1GenericCar            Team = 41
+	ArtGP2019               Team = 42
+	Campos2019              Team = 43
+	Carlin2019              Team = 44
+	SauberJuniorCharouz2019 Team = 45
+	Dams2019                Team = 46
+	UniVirtuosi2019         Team = 47
+	MPMotorsport2019        Team = 48
+	Prema2019               Team = 49
+	Trident2019             Team = 50
+	Arden2019               Team = 51
+	Benetton1994            Team = 53
+	Benetton1995            Team = 54
+	Ferrari2000             Team = 55
+	Jordan1991              Team = 56
+	Ferrari1990             Team = 63
+	McLaren2010             Team = 64
+	Ferrari2010             Team = 64
+	ArtGP2020               Team = 70
+	Campos2020              Team = 71
+	Carlin2020              Team = 72
+	Charouz2020             Team = 73
+	Dam2020                 Team = 74
+	UniVirtuosi2020         Team = 75
+	MPMotorsport2020        Team = 76
+	Prema2020               Team = 77
+	Trident2020             Team = 78
+	BWT2020                 Team = 79
+	Hitech2020              Team = 80
+	Mercedes2020            Team = 85
+	Ferrari2020             Team = 86
+	RedBull2020             Team = 87
+	Williams2020            Team = 88
+	RacingPoint2020         Team = 89
+	Renault2020             Team = 90
+	AlphaTauri2020          Team = 91
+	Haas2020                Team = 92
+	McLaren2020             Team = 93
+	AlfaRomeo2020           Team = 94
+	Prema2021               Team = 106
+	UniVirtuosi2021         Team = 107
+	Carlin2021              Team = 108
+	Hitech2021              Team = 109
+	ArtGP2021               Team = 110
+	MPMotorsport2021        Team = 111
+	Charouz2021             Team = 112
+	Dams2021                Team = 113
+	Campos2021              Team = 114
+	BWT2021                 Team = 115
+	Trident2021             Team = 116
+	MyTeam                  Team = 255
 )
 
-var teamNames = map[TeamsType]string{
+var teams = map[Team]string{
 	0:   "Mercedes",
 	1:   "Ferrari",
 	2:   "RedBulRacing",
@@ -193,6 +193,6 @@ var teamNames = map[TeamsType]string{
 	255: "MyTeam",
 }
 
-func (s TeamsType) String() string {
-	return teamNames[s]
+func (s Team) String() string {
+	return teams[s]
 }

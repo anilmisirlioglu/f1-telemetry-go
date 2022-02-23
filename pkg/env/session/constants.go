@@ -1,26 +1,26 @@
 package session
 
 // Session Types
-type SessionType uint8
+type Session uint8
 
 const (
-	Unknown   SessionType = 0
-	P1        SessionType = 1
-	P2        SessionType = 2
-	P3        SessionType = 3
-	ShortP    SessionType = 4
-	Q1        SessionType = 5
-	Q2        SessionType = 6
-	Q3        SessionType = 7
-	ShortQ    SessionType = 8
-	OSQ       SessionType = 9
-	R         SessionType = 10
-	R2        SessionType = 11
-	R3        SessionType = 12
-	TimeTrial SessionType = 13
+	Unknown   Session = 0
+	P1        Session = 1
+	P2        Session = 2
+	P3        Session = 3
+	ShortP    Session = 4
+	Q1        Session = 5
+	Q2        Session = 6
+	Q3        Session = 7
+	ShortQ    Session = 8
+	OSQ       Session = 9
+	R         Session = 10
+	R2        Session = 11
+	R3        Session = 12
+	TimeTrial Session = 13
 )
 
-var sessionNames = map[SessionType]string{
+var sessions = map[Session]string{
 	0:  "Unknown",
 	1:  "P1",
 	2:  "P2",
@@ -37,6 +37,6 @@ var sessionNames = map[SessionType]string{
 	13: "TimeTrial",
 }
 
-func (s SessionType) String() string {
-	return sessionNames[s]
+func (s Session) String() string {
+	return sessions[s]
 }

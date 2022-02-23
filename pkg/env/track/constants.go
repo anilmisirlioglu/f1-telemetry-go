@@ -1,42 +1,42 @@
 package track
 
 // Track IDs
-type TrackType uint8
+type Track uint8
 
 const (
-	Melbourne        TrackType = 0
-	PaulRicard       TrackType = 1
-	Shanghai         TrackType = 2
-	Sakhir           TrackType = 3
-	Catalunya        TrackType = 4
-	Monaco           TrackType = 5
-	Montreal         TrackType = 6
-	Silverstone      TrackType = 7
-	Hockenheim       TrackType = 8
-	Hungaroring      TrackType = 9
-	Spa              TrackType = 10
-	Monza            TrackType = 11
-	Singapore        TrackType = 12
-	Suzuka           TrackType = 13
-	AbuDhabi         TrackType = 14
-	Texas            TrackType = 15
-	Brazil           TrackType = 16
-	Austria          TrackType = 17
-	Sochi            TrackType = 18
-	Mexico           TrackType = 19
-	Baku             TrackType = 20
-	SakhirShort      TrackType = 21
-	SilverstoneShort TrackType = 22
-	TexasShort       TrackType = 23
-	SuzukaShort      TrackType = 24
-	Hanoi            TrackType = 25
-	Zandvoort        TrackType = 26
-	Imola            TrackType = 27
-	Partimao         TrackType = 28
-	Jeddah           TrackType = 29
+	Melbourne        Track = 0
+	PaulRicard       Track = 1
+	Shanghai         Track = 2
+	Sakhir           Track = 3
+	Catalunya        Track = 4
+	Monaco           Track = 5
+	Montreal         Track = 6
+	Silverstone      Track = 7
+	Hockenheim       Track = 8
+	Hungaroring      Track = 9
+	Spa              Track = 10
+	Monza            Track = 11
+	Singapore        Track = 12
+	Suzuka           Track = 13
+	AbuDhabi         Track = 14
+	Texas            Track = 15
+	Brazil           Track = 16
+	Austria          Track = 17
+	Sochi            Track = 18
+	Mexico           Track = 19
+	Baku             Track = 20
+	SakhirShort      Track = 21
+	SilverstoneShort Track = 22
+	TexasShort       Track = 23
+	SuzukaShort      Track = 24
+	Hanoi            Track = 25
+	Zandvoort        Track = 26
+	Imola            Track = 27
+	Partimao         Track = 28
+	Jeddah           Track = 29
 )
 
-var tracks = map[TrackType]string{
+var tracks = map[Track]string{
 	0:  "Melbourne",
 	1:  "PaulRicard",
 	2:  "Shanghai",
@@ -69,6 +69,6 @@ var tracks = map[TrackType]string{
 	29: "Jeddah",
 }
 
-func (t TrackType) String() string {
+func (t Track) String() string {
 	return tracks[t]
 }
