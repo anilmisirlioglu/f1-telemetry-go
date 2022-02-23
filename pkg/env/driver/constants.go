@@ -1,114 +1,232 @@
 package driver
 
 // Drivers IDs
+type Driver uint8
+
 const (
-	CarlosSainz         uint8 = 0
-	DaniilKvyat         uint8 = 1
-	DanielRicciardo     uint8 = 2
-	FernandoAlonso      uint8 = 3
-	FelipeMassa         uint8 = 4
-	KimiRaikkonen       uint8 = 6
-	LewisHamilton       uint8 = 7
-	MaxVerstappen       uint8 = 9
-	NicoHulkenburg      uint8 = 10
-	KevinMagnussen      uint8 = 11
-	RomainGrosjean      uint8 = 12
-	SebastianVettel     uint8 = 13
-	SergioPerez         uint8 = 14
-	ValtteriBottas      uint8 = 15
-	EstebanOcon         uint8 = 17
-	LanceStroll         uint8 = 19
-	ArronBarnes         uint8 = 20
-	MartinGiles         uint8 = 21
-	AlexMurray          uint8 = 22
-	LucasRoth           uint8 = 23
-	IgorCorreia         uint8 = 24
-	SophieLevasseur     uint8 = 25
-	JonasSchiffer       uint8 = 26
-	AlainForest         uint8 = 27
-	JayLetourneau       uint8 = 28
-	EstoSaari           uint8 = 29
-	YasarAtiyeh         uint8 = 30
-	CallistoCalabresi   uint8 = 31
-	NaotaIzum           uint8 = 32
-	HowardClarke        uint8 = 33
-	WilheimKaufmann     uint8 = 34
-	MarieLaursen        uint8 = 35
-	FlavioNieves        uint8 = 36
-	PeterBelousov       uint8 = 37
-	KlimekMichalski     uint8 = 38
-	SantiagoMoreno      uint8 = 39
-	BenjaminCoppens     uint8 = 40
-	NoahVisser          uint8 = 41
-	GertWaldmuller      uint8 = 42
-	JulianQuesada       uint8 = 43
-	DanielJones         uint8 = 44
-	ArtemMarkelov       uint8 = 45
-	TadasukeMakino      uint8 = 46
-	SeanGelael          uint8 = 47
-	NyckDeVries         uint8 = 48
-	JackAitken          uint8 = 49
-	GeorgeRussell       uint8 = 50
-	MaximilianGunther   uint8 = 51
-	NireiFukuzumi       uint8 = 52
-	LucaGhiotto         uint8 = 53
-	LandoNorris         uint8 = 54
-	SergioSetteCamara   uint8 = 55
-	LouisDeletraz       uint8 = 56
-	AntonioFuoco        uint8 = 57
-	CharlesLeclerc      uint8 = 58
-	PierreGasly         uint8 = 59
-	AlexanderAlbon      uint8 = 62
-	NicholasLatifi      uint8 = 63
-	DorianBoccolacci    uint8 = 64
-	NikoKari            uint8 = 65
-	RobertoMerhi        uint8 = 66
-	ArjunMaini          uint8 = 67
-	AlessioLorandi      uint8 = 68
-	RubenMeijer         uint8 = 69
-	RashidNair          uint8 = 70
-	JackTremblay        uint8 = 71
-	AntonioGiovinazzi   uint8 = 74
-	RobertKubica        uint8 = 75
-	NobuharuMatsushita  uint8 = 78
-	NikitaMazepin       uint8 = 79
-	GuanyaZhou          uint8 = 80
-	MickSchumacher      uint8 = 81
-	CallumIlott         uint8 = 82
-	JuanManuelCorrea    uint8 = 83
-	JordanKing          uint8 = 84
-	MahaveerRaghunathan uint8 = 85
-	TatianaCalderon     uint8 = 86
-	AnthoineHubert      uint8 = 87
-	GuilianoAlesi       uint8 = 88
-	RalphBoschung       uint8 = 89
-	MichaelSchumacher   uint8 = 90
-	DanTicktum          uint8 = 91
-	MarcusArmstrong     uint8 = 92
-	ChristianLundgaard  uint8 = 93
-	YukiTsunoda         uint8 = 94
-	JehanDaruvala       uint8 = 95
-	GulhermeSamaia      uint8 = 96
-	PedroPiquet         uint8 = 97
-	FelipeDrugovich     uint8 = 98
-	RoberSchwartzman    uint8 = 99
-	RoyNissany          uint8 = 100
-	MarinoSatorus       uint8 = 101
-	AidanJackson        uint8 = 102
-	CasperAkkerman      uint8 = 103
-	JensonButton        uint8 = 109
-	DavidCoulthard      uint8 = 110
-	NicoRosberg         uint8 = 111
-	OscarPiastri        uint8 = 112
-	LiamLawson          uint8 = 113
-	JuriVips            uint8 = 114
-	TheoPourchaire      uint8 = 115
-	RichardVerschoor    uint8 = 116
-	LirimZendeli        uint8 = 117
-	DavidBeckmann       uint8 = 118
-	GianlucaPetecof     uint8 = 119
-	MatteoNannini       uint8 = 120
-	AlessioDeledda      uint8 = 121
-	BentViscaal         uint8 = 122
-	EnzoFitipaldi       uint8 = 123
+	CarlosSainz         Driver = 0
+	DaniilKvyat         Driver = 1
+	DanielRicciardo     Driver = 2
+	FernandoAlonso      Driver = 3
+	FelipeMassa         Driver = 4
+	KimiRaikkonen       Driver = 6
+	LewisHamilton       Driver = 7
+	MaxVerstappen       Driver = 9
+	NicoHulkenburg      Driver = 10
+	KevinMagnussen      Driver = 11
+	RomainGrosjean      Driver = 12
+	SebastianVettel     Driver = 13
+	SergioPerez         Driver = 14
+	ValtteriBottas      Driver = 15
+	EstebanOcon         Driver = 17
+	LanceStroll         Driver = 19
+	ArronBarnes         Driver = 20
+	MartinGiles         Driver = 21
+	AlexMurray          Driver = 22
+	LucasRoth           Driver = 23
+	IgorCorreia         Driver = 24
+	SophieLevasseur     Driver = 25
+	JonasSchiffer       Driver = 26
+	AlainForest         Driver = 27
+	JayLetourneau       Driver = 28
+	EstoSaari           Driver = 29
+	YasarAtiyeh         Driver = 30
+	CallistoCalabresi   Driver = 31
+	NaotaIzum           Driver = 32
+	HowardClarke        Driver = 33
+	WilheimKaufmann     Driver = 34
+	MarieLaursen        Driver = 35
+	FlavioNieves        Driver = 36
+	PeterBelousov       Driver = 37
+	KlimekMichalski     Driver = 38
+	SantiagoMoreno      Driver = 39
+	BenjaminCoppens     Driver = 40
+	NoahVisser          Driver = 41
+	GertWaldmuller      Driver = 42
+	JulianQuesada       Driver = 43
+	DanielJones         Driver = 44
+	ArtemMarkelov       Driver = 45
+	TadasukeMakino      Driver = 46
+	SeanGelael          Driver = 47
+	NyckDeVries         Driver = 48
+	JackAitken          Driver = 49
+	GeorgeRussell       Driver = 50
+	MaximilianGunther   Driver = 51
+	NireiFukuzumi       Driver = 52
+	LucaGhiotto         Driver = 53
+	LandoNorris         Driver = 54
+	SergioSetteCamara   Driver = 55
+	LouisDeletraz       Driver = 56
+	AntonioFuoco        Driver = 57
+	CharlesLeclerc      Driver = 58
+	PierreGasly         Driver = 59
+	AlexanderAlbon      Driver = 62
+	NicholasLatifi      Driver = 63
+	DorianBoccolacci    Driver = 64
+	NikoKari            Driver = 65
+	RobertoMerhi        Driver = 66
+	ArjunMaini          Driver = 67
+	AlessioLorandi      Driver = 68
+	RubenMeijer         Driver = 69
+	RashidNair          Driver = 70
+	JackTremblay        Driver = 71
+	AntonioGiovinazzi   Driver = 74
+	RobertKubica        Driver = 75
+	NobuharuMatsushita  Driver = 78
+	NikitaMazepin       Driver = 79
+	GuanyaZhou          Driver = 80
+	MickSchumacher      Driver = 81
+	CallumIlott         Driver = 82
+	JuanManuelCorrea    Driver = 83
+	JordanKing          Driver = 84
+	MahaveerRaghunathan Driver = 85
+	TatianaCalderon     Driver = 86
+	AnthoineHubert      Driver = 87
+	GuilianoAlesi       Driver = 88
+	RalphBoschung       Driver = 89
+	MichaelSchumacher   Driver = 90
+	DanTicktum          Driver = 91
+	MarcusArmstrong     Driver = 92
+	ChristianLundgaard  Driver = 93
+	YukiTsunoda         Driver = 94
+	JehanDaruvala       Driver = 95
+	GulhermeSamaia      Driver = 96
+	PedroPiquet         Driver = 97
+	FelipeDrugovich     Driver = 98
+	RoberSchwartzman    Driver = 99
+	RoyNissany          Driver = 100
+	MarinoSatorus       Driver = 101
+	AidanJackson        Driver = 102
+	CasperAkkerman      Driver = 103
+	JensonButton        Driver = 109
+	DavidCoulthard      Driver = 110
+	NicoRosberg         Driver = 111
+	OscarPiastri        Driver = 112
+	LiamLawson          Driver = 113
+	JuriVips            Driver = 114
+	TheoPourchaire      Driver = 115
+	RichardVerschoor    Driver = 116
+	LirimZendeli        Driver = 117
+	DavidBeckmann       Driver = 118
+	GianlucaPetecof     Driver = 119
+	MatteoNannini       Driver = 120
+	AlessioDeledda      Driver = 121
+	BentViscaal         Driver = 122
+	EnzoFitipaldi       Driver = 123
 )
+
+var drivers = map[Driver]string{
+	0:   "CarlosSainz",
+	1:   "DaniilKvyat",
+	2:   "DanielRicciardo",
+	3:   "FernandoAlonso",
+	4:   "FelipeMassa",
+	6:   "KimiRaikkonen",
+	7:   "LewisHamilton",
+	9:   "MaxVerstappen",
+	10:  "NicoHulkenburg",
+	11:  "KevinMagnussen",
+	12:  "RomainGrosjean",
+	13:  "SebastianVettel",
+	14:  "SergioPerez",
+	15:  "ValtteriBottas",
+	17:  "EstebanOcon",
+	19:  "LanceStroll",
+	20:  "ArronBarnes",
+	21:  "MartinGiles",
+	22:  "AlexMurray",
+	23:  "LucasRoth",
+	24:  "IgorCorreia",
+	25:  "SophieLevasseur",
+	26:  "JonasSchiffer",
+	27:  "AlainForest",
+	28:  "JayLetourneau",
+	29:  "EstoSaari",
+	30:  "YasarAtiyeh",
+	31:  "CallistoCalabresi",
+	32:  "NaotaIzum",
+	33:  "HowardClarke",
+	34:  "WilheimKaufmann",
+	35:  "MarieLaursen",
+	36:  "FlavioNieves",
+	37:  "PeterBelousov",
+	38:  "KlimekMichalski",
+	39:  "SantiagoMoreno",
+	40:  "BenjaminCoppens",
+	41:  "NoahVisser",
+	42:  "GertWaldmuller",
+	43:  "JulianQuesada",
+	44:  "DanielJones",
+	45:  "ArtemMarkelov",
+	46:  "TadasukeMakino",
+	47:  "SeanGelael",
+	48:  "NyckDeVries",
+	49:  "JackAitken",
+	50:  "GeorgeRussell",
+	51:  "MaximilianGunther",
+	52:  "NireiFukuzumi",
+	53:  "LucaGhiotto",
+	54:  "LandoNorris",
+	55:  "SergioSetteCamara",
+	56:  "LouisDeletraz",
+	57:  "AntonioFuoco",
+	58:  "CharlesLeclerc",
+	59:  "PierreGasly",
+	62:  "AlexanderAlbon",
+	63:  "NicholasLatifi",
+	64:  "DorianBoccolacci",
+	65:  "NikoKari",
+	66:  "RobertoMerhi",
+	67:  "ArjunMaini",
+	68:  "AlessioLorandi",
+	69:  "RubenMeijer",
+	70:  "RashidNair",
+	71:  "JackTremblay",
+	74:  "AntonioGiovinazzi",
+	75:  "RobertKubica",
+	78:  "NobuharuMatsushita",
+	79:  "NikitaMazepin",
+	80:  "GuanyaZhou",
+	81:  "MickSchumacher",
+	82:  "CallumIlott",
+	83:  "JuanManuelCorrea",
+	84:  "JordanKing",
+	85:  "MahaveerRaghunathan",
+	86:  "TatianaCalderon",
+	87:  "AnthoineHubert",
+	88:  "GuilianoAlesi",
+	89:  "RalphBoschung",
+	90:  "MichaelSchumacher",
+	91:  "DanTicktum",
+	92:  "MarcusArmstrong",
+	93:  "ChristianLundgaard",
+	94:  "YukiTsunoda",
+	95:  "JehanDaruvala",
+	96:  "GulhermeSamaia",
+	97:  "PedroPiquet",
+	98:  "FelipeDrugovich",
+	99:  "RoberSchwartzman",
+	100: "RoyNissany",
+	101: "MarinoSatorus",
+	102: "AidanJackson",
+	103: "CasperAkkerman",
+	109: "JensonButton",
+	110: "DavidCoulthard",
+	111: "NicoRosberg",
+	112: "OscarPiastri",
+	113: "LiamLawson",
+	114: "JuriVips",
+	115: "TheoPourchaire",
+	116: "RichardVerschoor",
+	117: "LirimZendeli",
+	118: "DavidBeckmann",
+	119: "GianlucaPetecof",
+	120: "MatteoNannini",
+	121: "AlessioDeledda",
+	122: "BentViscaal",
+	123: "EnzoFitipaldi",
+}
+
+func (s Driver) String() string {
+	return drivers[s]
+}
