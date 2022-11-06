@@ -1,92 +1,96 @@
 package nationality
 
 // Nationality IDs
+//
+//go:generate stringer -type=Nationality -linecomment
+type Nationality uint8
+
 const (
-	American      uint8 = 1
-	Argentinean   uint8 = 2
-	Australian    uint8 = 3
-	Austrian      uint8 = 4
-	Azerbaijani   uint8 = 5
-	Bahraini      uint8 = 6
-	Belgian       uint8 = 7
-	Bolivian      uint8 = 8
-	Brazilian     uint8 = 9
-	British       uint8 = 10
-	Bulgarian     uint8 = 11
-	Cameroonian   uint8 = 12
-	Canadian      uint8 = 13
-	Chilean       uint8 = 14
-	Chinese       uint8 = 15
-	Colombian     uint8 = 16
-	CostaRican    uint8 = 17
-	Croatian      uint8 = 18
-	Cypriot       uint8 = 19
-	Czech         uint8 = 20
-	Danish        uint8 = 21
-	Dutch         uint8 = 22
-	Ecuadorian    uint8 = 23
-	English       uint8 = 24
-	Emirian       uint8 = 25
-	Estonian      uint8 = 26
-	Finnish       uint8 = 27
-	French        uint8 = 28
-	German        uint8 = 29
-	Ghanaian      uint8 = 30
-	Greek         uint8 = 31
-	Guatemalan    uint8 = 32
-	Honduran      uint8 = 33
-	HongKonger    uint8 = 34
-	Hungarian     uint8 = 35
-	Icelander     uint8 = 36
-	Indian        uint8 = 37
-	Indonesian    uint8 = 38
-	Irish         uint8 = 39
-	Israeli       uint8 = 40
-	Italian       uint8 = 41
-	Jamaican      uint8 = 42
-	Japanese      uint8 = 43
-	Jordanian     uint8 = 44
-	Kuwaiti       uint8 = 45
-	Latvian       uint8 = 46
-	Lebanese      uint8 = 47
-	Lithuanian    uint8 = 48
-	Luxembourger  uint8 = 49
-	Malaysian     uint8 = 50
-	Maltese       uint8 = 51
-	Mexican       uint8 = 52
-	Monegasque    uint8 = 53
-	NewZealander  uint8 = 54
-	Nicaraguan    uint8 = 55
-	NorthernIrish uint8 = 56
-	Norwegian     uint8 = 57
-	Omani         uint8 = 58
-	Pakistani     uint8 = 59
-	Panamanian    uint8 = 60
-	Paraguayan    uint8 = 61
-	Peruvian      uint8 = 62
-	Polish        uint8 = 63
-	Portuguese    uint8 = 64
-	Qatari        uint8 = 65
-	Romanian      uint8 = 66
-	Russian       uint8 = 67
-	Salvadoran    uint8 = 68
-	Saudi         uint8 = 69
-	Scottish      uint8 = 70
-	Serbian       uint8 = 71
-	Singaporean   uint8 = 72
-	Slovakian     uint8 = 73
-	Slovenian     uint8 = 74
-	SouthKorean   uint8 = 75
-	SouthAfrican  uint8 = 76
-	Spanish       uint8 = 77
-	Swedish       uint8 = 78
-	Swiss         uint8 = 79
-	Thai          uint8 = 80
-	Turkish       uint8 = 81
-	Uruguayan     uint8 = 82
-	Ukrainian     uint8 = 83
-	Venezuelan    uint8 = 84
-	Welsh         uint8 = 85
-	Barbadian     uint8 = 86
-	Vietnamese    uint8 = 87
+	American Nationality = iota + 1
+	Argentinean
+	Australian
+	Austrian
+	Azerbaijani
+	Bahraini
+	Belgian
+	Bolivian
+	Brazilian
+	British
+	Bulgarian
+	Cameroonian
+	Canadian
+	Chilean
+	Chinese
+	Colombian
+	CostaRican
+	Croatian
+	Cypriot
+	Czech
+	Danish
+	Dutch
+	Ecuadorian
+	English
+	Emirian
+	Estonian
+	Finnish
+	French
+	German
+	Ghanaian
+	Greek
+	Guatemalan
+	Honduran
+	HongKonger // Hong Konger
+	Hungarian
+	Icelander
+	Indian
+	Indonesian
+	Irish
+	Israeli
+	Italian
+	Jamaican
+	Japanese
+	Jordanian
+	Kuwaiti
+	Latvian
+	Lebanese
+	Lithuanian
+	Luxembourger
+	Malaysian
+	Maltese
+	Mexican
+	Monegasque
+	NewZealander // New Zealander
+	Nicaraguan
+	NorthernIrish // Northern Irish
+	Norwegian
+	Omani
+	Pakistani
+	Panamanian
+	Paraguayan
+	Peruvian
+	Polish
+	Portuguese
+	Qatari
+	Romanian
+	Russian
+	Salvadoran
+	Saudi
+	Scottish
+	Serbian
+	Singaporean
+	Slovakian
+	Slovenian
+	SouthKorean  // South Korean
+	SouthAfrican // South African
+	Spanish
+	Swedish
+	Swiss
+	Thai
+	Turkish
+	Uruguayan
+	Ukrainian
+	Venezuelan
+	Welsh
+	Barbadian
+	Vietnamese
 )

@@ -42,6 +42,20 @@ the value below logical ANDed with the button status is set then the correspondi
 | 0x00008000 | Right Stick Left  | 
 | 0x00010000 | Right Stick Right | 
 | 0x00020000 | Right Stick Up    |
+| 0x00040000 | Right Stick Down  |
+| 0x00080000 | Special           |
+| 0x00100000 | UDP Action 1      |
+| 0x00200000 | UDP Action 2      |
+| 0x00400000 | UDP Action 3      |
+| 0x00800000 | UDP Action 4      |
+| 0x01000000 | UDP Action 5      |
+| 0x02000000 | UDP Action 6      |
+| 0x04000000 | UDP Action 7      |
+| 0x08000000 | UDP Action 8      |
+| 0x10000000 | UDP Action 9      |
+| 0x20000000 | UDP Action 10     |
+| 0x40000000 | UDP Action 11     |
+| 0x80000000 | UDP Action 12     |
 
 ## Penalty Types
 
@@ -122,3 +136,6 @@ the value below logical ANDed with the button status is set then the correspondi
 | 49  | Retry penalty                                   | 
 | 50  | Illegal time gain                               | 
 | 51  | Mandatory pitstop                               | 
+| 52  | Illegal time gain                               |
+| 53  | Mandatory pitstop                               |
+| 54  | Attribute assigned                              |
