@@ -1,6 +1,6 @@
 # F1 Game Telemetry Client in Go [![Made With Go](https://img.shields.io/badge/Made%20with-Go-1f425f.svg?color=007EC6)](http://golang.org)
 
-Telemetry client for F1 Game, written in Go. Supports the UDP 2020 and 2021 format.
+Telemetry client for F1 Game, written in Go. Supports the F1 UDP 2022 and previous formats.
 
 ![f1-telemetry-client](https://user-images.githubusercontent.com/20264712/121112897-ccc2fb00-c819-11eb-9739-91ccddcbcdc4.png)
 
