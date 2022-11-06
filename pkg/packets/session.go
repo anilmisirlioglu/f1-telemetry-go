@@ -1,9 +1,16 @@
 package packets
 
+import (
+	"github.com/anilmisirlioglu/f1-telemetry-go/pkg/env/game"
+	penalty "github.com/anilmisirlioglu/f1-telemetry-go/pkg/env/ruleset"
+	"github.com/anilmisirlioglu/f1-telemetry-go/pkg/env/session"
+	"github.com/anilmisirlioglu/f1-telemetry-go/pkg/env/track"
+)
+
 // The session packet includes details about the current session in progress.
 
 // Frequency: 2 per second
-// Size: 251 bytes
+// Size: 632 bytes
 // Version: 1
 
 type MarshalZone struct {
@@ -29,11 +36,11 @@ type PacketSessionData struct {
 	AirTemperature            int8                      // Air temp. in degrees celsius
 	TotalLaps                 uint8                     // Total number of laps in this race
 	TrackLength               uint16                    // Track length in metres
-	SessionType               uint8                     // 0 = unknown, 1 = P1, 2 = P2, 3 = P3, 4 = Short P, 5 = Q1, 6 = Q2, 7 = Q3, 8 = Short Q, 9 = OSQ, 10 = R, 11 = R2, 12 = Time Trial
-	TrackID                   int8                      // -1 for unknown, 0-21 for tracks, see docs/IDS.md#track-ids
-	Formula                   uint8                     // Formula, 0 = F1 Modern, 1 = F1 Classic, 2 = F2, 3 = F1 Generic
+	SessionType               session.Type              // 0 = unknown, 1 = P1, 2 = P2, 3 = P3, 4 = Short P, 5 = Q1, 6 = Q2, 7 = Q3, 8 = Short Q, 9 = OSQ, 10 = R, 11 = R2, 12 = Time Trial
+	TrackID                   track.Track               // -1 for unknown, 0-21 for tracks, see docs/IDS.md#track-ids
+	Formula                   uint8                     // Formula, 0 = F1 Modern, 1 = F1 Classic, 2 = F2, 3 = F1 Generic, 4 = Beta, 5 = Supercars, 6 = E-Sports, 7 = F2 2021
 	SessionTimeLeft           uint16                    // Time left in session in seconds
-	SessionDuration           uint16                    // Session duration in seconds
+	SessionDuration           uint16                    // Type duration in seconds
 	PitSpeedLimit             uint8                     // Pit speed limit in kilometres per hour
 	GamePaused                uint8                     // Whether the game is paused
 	IsSpectating              uint8                     // Whether the player is spectating
@@ -61,5 +68,9 @@ type PacketSessionData struct {
 	ERSAssist                 uint8                     // 0 = off, 1 = on
 	DRSAssist                 uint8                     // 0 = off, 1 = on
 	DynamicRacingLine         uint8                     // 0 = off, 1 = corners only, 2 = full
-	DynamicRangeLineType      uint8                     // 0 = 2D, 1 = 3D
+	DynamicRacingLineType     uint8                     // 0 = 2D, 1 = 3D
+	GameMode                  game.Mode                 // Game mode id
+	RuleSet                   penalty.Ruleset           // Ruleset
+	TimeOfDay                 uint32                    // Local time of day - minutes since midnight
+	SessionLength             session.Length            // 0 = None, 2 = Very Short, 3 = Short, 4 = Medium, 5 = Medium Long, 6 = Long, 7 = Full
 }

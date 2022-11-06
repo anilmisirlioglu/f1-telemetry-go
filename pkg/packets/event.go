@@ -1,9 +1,14 @@
 package packets
 
+import (
+	"github.com/anilmisirlioglu/f1-telemetry-go/pkg/env/infringement"
+	"github.com/anilmisirlioglu/f1-telemetry-go/pkg/env/penalty"
+)
+
 // This packet gives details of events that happen during the course of a session.
 
 // Frequency: When the event occurs
-// Size: 35 bytes
+// Size: 40 bytes
 // Version: 1
 
 type FastestLap struct {
@@ -24,20 +29,22 @@ type RaceWinner struct {
 }
 
 type Penalty struct {
-	PenaltyType      uint8 // Penalty type – see docs/TYPES.md#penalty-types
-	InfringementType uint8 // Infringement type – see docs/TYPES.md#infringement-types
-	VehicleIdx       uint8 // Vehicle index of the car the penalty is applied to
-	OtherVehicleIdx  uint8 // Vehicle index of the other car involved
-	Time             uint8 // Time gained, or time spent doing action in seconds
-	LapNum           uint8 // Lap the penalty occurred on
-	PlacesGained     uint8 // Number of places gained by this
+	PenaltyType      penalty.Penalty           // Penalty type – see docs/TYPES.md#penalty-types
+	InfringementType infringement.Infringement // Infringement type – see docs/TYPES.md#infringement-types
+	VehicleIdx       uint8                     // Vehicle index of the car the penalty is applied to
+	OtherVehicleIdx  uint8                     // Vehicle index of the other car involved
+	Time             uint8                     // Time gained, or time spent doing action in seconds
+	LapNum           uint8                     // Lap the penalty occurred on
+	PlacesGained     uint8                     // Number of places gained by this
 }
 
 type SpeedTrap struct {
-	VehicleIdx              uint8   // Vehicle index of the vehicle triggering speed trap
-	Speed                   float32 // Top speed achieved in kilometres per hour
-	OverallFastestInSession uint8   // Overall fastest speed in session = 1, otherwise 0
-	DriverFastestInSession  uint8   // Fastest speed for driver in session = 1, otherwise 0
+	VehicleIdx                 uint8   // Vehicle index of the vehicle triggering speed trap
+	Speed                      float32 // Top speed achieved in kilometres per hour
+	IsOverallFastestInSession  uint8   // Overall fastest speed in session = 1, otherwise 0
+	IsDriverFastestInSession   uint8   // Fastest speed for driver in session = 1, otherwise 0
+	FastestVehicleIdxInSession uint8   // Vehicle index of the vehicle that is the fastest  in this session
+	FastestSpeedInSession      float32 // Speed of the vehicle that is the fastest in this session
 }
 
 type StartLights struct {
@@ -71,8 +78,7 @@ type PrePacketEventData struct {
 type PacketEventData struct {
 	Header          PacketHeader
 	EventStringCode [4]uint8    // Event string code, see below
-	EventDetails    interface{} // Event details - should be interpreted differently
-	// for each type
+	EventDetails    interface{} // Event details - should be interpreted differently for each type
 }
 
 func (p *PacketEventData) EventCodeString() string {

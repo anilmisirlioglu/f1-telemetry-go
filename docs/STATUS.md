@@ -6,9 +6,10 @@
 | 1   | inactive       |
 | 2   | active         |
 | 3   | finished       |
-| 4   | disqualified   |
-| 5   | not classified |
-| 6   | retired        |
+| 4   | didnotfinish   |
+| 5   | disqualified   |
+| 6   | not classified |
+| 7   | retired        |
 
 ## Driver Status
 

@@ -5,6 +5,9 @@ import "github.com/anilmisirlioglu/f1-telemetry-go/pkg/math"
 // The motion packet gives physics data for all the cars being driven.
 // There is additional data for the car being driven with the goal of being able to drive a motion platform setup.
 
+// N.B. For the normalised vectors below, to convert to float values divide by 32767.0f – 16-bit signed values are used
+// to pack the data and on the assumption that direction values are always between -1.0f and 1.0f.
+
 // Frequency: Rate as specified in menus
 // Size: 1464 bytes
 // Version: 1

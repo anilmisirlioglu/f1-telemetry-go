@@ -2,9 +2,10 @@ package packets
 
 // This packet details telemetry for all the cars in the race.
 // It details various values that would be recorded on the car such as speed, throttle application, DRS etc.
+// Note that the rev light configurations are presented separately as well and will mimic real life driver preferences.
 
 // Frequency: Rate as specified in menus
-// Size: 1307 bytes
+// Size: 1347 bytes
 // Version: 1
 
 type CarTelemetryData struct {

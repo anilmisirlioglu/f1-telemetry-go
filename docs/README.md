@@ -1,12 +1,13 @@
-## Formula 1 - 2021, UDP Specifications
+## Formula 1 - 2022, UDP Specifications
 
-> Disclaimer: These documents have been obtained from documents provided by CodeMaster. **These documents are not official.**
+> Disclaimer: These documents have been obtained from documents provided by EA CodeMaster. **These documents are not official.**
 
-⚠️If you need **F1 2021** UDP specifications please see the official CodeMasters [docs](https://forums.codemasters.com/topic/80231-f1-2021-udp-specification).
+⚠️ If you need **F1 2022** UDP specifications please see the official EA CodeMasters [docs](https://answers.ea.com/t5/General-Discussion/F1-22-UDP-Specification/td-p/11551274).
 
 **Official Documents**
 - [F1 2020](https://forums.codemasters.com/topic/50942-f1-2020-udp-specification)
 - [F1 2021](https://forums.codemasters.com/topic/80231-f1-2021-udp-specification)
+- [F1 2022](https://answers.ea.com/t5/General-Discussion/F1-22-UDP-Specification/td-p/11551274)
 
 **Available Categories**
 

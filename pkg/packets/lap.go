@@ -3,7 +3,7 @@ package packets
 // The lap data packet gives details of all the cars in the session.
 
 // Frequency: Rate as specified in menus
-// Size: 1190 bytes
+// Size: 972 bytes
 // Version: 1
 
 type LapData struct {
@@ -26,7 +26,7 @@ type LapData struct {
 	NumUnservedStopGoPens       uint8   // Num stop go pens left to serve
 	GridPosition                uint8   // Grid position the vehicle started the race in
 	DriverStatus                uint8   // Status of driver - 0 = in garage, 1 = flying lap, 2 = in lap, 3 = out lap, 4 = on track
-	ResultStatus                uint8   // Result status - 0 = invalid, 1 = inactive, 2 = active, 3 = finished, 4 = disqualified, 5 = not classified, 6 = retired
+	ResultStatus                uint8   // Result status - 0 = invalid, 1 = inactive, 2 = active, 3 = finished, 4 = did not finish, 5 = disqualified, 6 = not classified, 7 = retired
 	PitLaneTimerActive          uint8   // Pit lane timing, 0 = inactive, 1 = active
 	PitLaneTimeInLaneInMS       uint16  // If active, the current time spent in the pit lane in ms
 	PitStopTimerInMS            uint16  // Time of the actual pit stop in ms
@@ -34,8 +34,10 @@ type LapData struct {
 }
 
 type PacketLapData struct {
-	Header  PacketHeader
-	LapData [22]LapData // Lap data for all cars on track
+	Header                      PacketHeader
+	LapData                     [22]LapData // Lap data for all cars on track
+	TimeTrialPersonalBestCarIdx uint8       // Index of Personal Best car in time trial (255 if invalid)
+	TimeTrialRivalCarIdx        uint8       // Index of Rival car in time trial (255 if invalid)
 }
 
 func (p *PacketLapData) Self() LapData {
